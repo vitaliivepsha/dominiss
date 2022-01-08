@@ -1,0 +1,15 @@
+.pagination{
+  display: flex;
+  justify-content: center;
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: max-content;
+    @include bp(xs){
+      width: auto;
+      flex: 1 0 auto;
+    }
+  }
+}
