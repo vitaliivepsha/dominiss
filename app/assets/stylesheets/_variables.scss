@@ -1,13 +1,18 @@
 // Переменные для приложения и всех модулей
 
-$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 $formBorder: none;
 $formBorderRadius: 0;
 $inputBorderRadius: 0;
 $gray: #757575;
-$black: #211F1F;
-$accent: #CC3636;
-$bg-gray: #F8F8F8;
+$dark-gray: #565656;
+$black: #211f1f;
+$accent: #cc3636;
+$bg-gray: #f8f8f8;
 $border: rgba(117, 117, 117, 0.3);
-$shadow: 0px 4px 20px rgba(33, 31, 31, 0.1);
-$default: 'Commissioner';
+$shadow: 0px 4px 20px rgba(33, 31, 31, 0.9);
+$default: "Commissioner";
+$CormorantSC: "CormorantSC";
+
+//  <div class="nothin" style="height: 50px; width: 100%; background-color: red;"></div>
+// height: calc(37.5vw - 10px);

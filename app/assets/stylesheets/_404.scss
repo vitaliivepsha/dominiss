@@ -1,0 +1,104 @@
+.not-found {
+  padding-top: 54px;
+  padding-bottom: 50px;
+  border-top: 1px solid $border;
+  @media (max-width: 767px) {
+    padding-top: 16px;
+    padding-bottom: 37px;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    padding-bottom: 134px;
+    background: $bg-gray;
+    @media (max-width: 767px) {
+      padding: 40px 10px 75px;
+    }
+  }
+  &__title {
+    font-family: $CormorantSC;
+    font-size: 90px;
+    line-height: 116px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: $black;
+    @media (max-width: 767px) {
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+  &__sub-title {
+    margin: 0;
+    margin-bottom: 45px;
+    font-family: $CormorantSC;
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 500;
+    color: $black;
+    letter-spacing: 0.03em;
+    text-align: center;
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+  &__text {
+    margin: 0;
+    margin-bottom: 22px;
+    font-size: 18px;
+    line-height: 22px;
+    color: $dark-gray;
+    letter-spacing: 0.03em;
+    text-align: center;
+    &:last-of-type {
+      margin-bottom: 53px;
+    }
+    @media (max-width: 767px) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+  &__btn-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    & a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 266px;
+      border: 1px solid $black;
+      min-height: 40px;
+      padding: 5px 10px;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      &:first-child {
+        color: $black;
+        &:hover {
+          color: #fff;
+          background-color: $black;
+        }
+      }
+      &:last-child {
+        background-color: $black;
+        color: #ffffff;
+        &:hover {
+          border: 1px solid $accent;
+          background-color: $accent;
+        }
+      }
+      @media (max-width: 767px) {
+        font-size: 13px;
+        line-height: 16px;
+        width: 125px;
+        gap: 10px;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-.txt-section{
+.txt-section {
   position: relative;
   padding: 50px 0 80px;
   /*&:after{
@@ -11,13 +11,16 @@
     background: rgba(117, 117, 117, 0.3);
     opacity: .8;
   }*/
+  &.main h1 {
+    font-family: $CormorantSC;
+  }
 }
 
-.txt-main__wrapper{
+.txt-main__wrapper {
   width: 930px;
   max-width: 100%;
   margin: 0 auto;
-  >h1{
+  > h1 {
     margin-top: 0;
     text-align: center;
     margin-bottom: 17px;
@@ -27,25 +30,26 @@
   }
 }
 
-.txt-logo{
+.txt-logo {
   text-align: center;
   display: block;
   margin: 0 auto 20px;
   max-height: 50px;
-  img{
+  img {
     max-height: 100%;
     object-fit: contain;
   }
 }
 
-.txt-main{
+.txt-main {
   max-height: 72px;
   overflow: hidden;
   font-size: 12px;
   line-height: 150%;
   text-align: center;
-  transition: linear .3s;
-  h2, h3{
+  transition: linear 0.3s;
+  h2,
+  h3 {
     margin-top: 30px;
     margin-bottom: 15px;
     text-align: center;
@@ -53,36 +57,36 @@
     font-size: 18px;
     line-height: 23px;
   }
-  p{
+  p {
     margin-bottom: 15px;
   }
-  ul{
+  ul {
     padding-left: 18px;
     list-style-type: disc;
     margin-bottom: 15px;
     text-align: left;
-    li{
+    li {
       margin-bottom: 5px;
     }
   }
-  ol{
+  ol {
     padding-left: 18px;
     list-style-type: decimal;
     margin-bottom: 15px;
     text-align: left;
-    li{
+    li {
       margin-bottom: 5px;
     }
   }
 }
 
-.txt-more__btn{
+.txt-more__btn {
   display: block;
   text-align: center;
   margin-top: 15px;
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
-  letter-spacing: 0.01em;  
+  letter-spacing: 0.01em;
   cursor: pointer;
 }
