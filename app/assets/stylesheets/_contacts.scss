@@ -81,7 +81,7 @@
     padding: 20px 10px;
     padding-bottom: 30px;
   }
-
+  // контакты
   & .contacts {
     display: flex;
     justify-content: space-between;
@@ -253,8 +253,13 @@
       }
     }
   }
-
+  // faq
   & .contacts-faq {
+    width: 100%;
+    border-bottom: 1px solid $border;
+    @media (max-width: 575px) {
+      margin-bottom: 15px;
+    }
     & h1 {
       margin: 0;
       margin-bottom: 30px;
@@ -270,8 +275,63 @@
       }
     }
 
-    .accordion-item__body {
-      display: none;
+    & .acc-title {
+      position: relative;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      border-top: 1px solid $border;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      @media (max-width: 575px) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: 9px;
+        height: 1px;
+        margin-right: 20px;
+        background-color: $dark-gray;
+        transition: transform 0.3s;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: 9px;
+        height: 1px;
+        margin-right: 20px;
+        background-color: $dark-gray;
+        transform: rotate(90deg);
+        transition: transform 0.3s;
+      }
+      &.active {
+        &::before {
+          transform: rotate(0);
+        }
+      }
+      &:first-child {
+        padding-top: 0;
+        border-top: none;
+      }
+    }
+
+    & .acc-body {
+      padding-bottom: 25px;
+      @media (max-width: 575px) {
+        padding-bottom: 10px;
+      }
     }
   }
 }
