@@ -7,9 +7,13 @@ if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/catalog.html');
     require('./assets/templates/layouts/product.html');
     require('./assets/templates/layouts/contacts.html');
+    require('./assets/templates/layouts/contacts-success.html');
     require('./assets/templates/layouts/contacts-faq.html');
     require('./assets/templates/layouts/contacts-text.html');
     require('./assets/templates/layouts/contacts-sizes.html');
+
+    require('./assets/templates/layouts/about-text.html');
+    require('./assets/templates/layouts/about-press-room.html');
 }
 
 // Depends
