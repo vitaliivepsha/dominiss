@@ -8,6 +8,8 @@ if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/product.html');
     require('./assets/templates/layouts/contacts.html');
     require('./assets/templates/layouts/contacts-faq.html');
+    require('./assets/templates/layouts/contacts-text.html');
+    require('./assets/templates/layouts/contacts-sizes.html');
 }
 
 // Depends
@@ -259,50 +261,50 @@ $(function () {
         $(this).closest('.product-size__head').toggleClass('open').next().slideToggle();
     });
 
-  // product info
+    // product info
 
-  $('.product-info__head').click(function() {
-    $(this).toggleClass('open').next().slideToggle();
-  });
+    $('.product-info__head').click(function () {
+        $(this).toggleClass('open').next().slideToggle();
+    });
 
-  // custom slider navigation
+    // custom slider navigation
 
-  $('.custom-nav__slider').each(function() {
-      var $slider = $(this);
+    $('.custom-nav__slider').each(function () {
+        var $slider = $(this);
 
-      $slider.closest('.custom-nav__slider-wrapper').find('.slider-next').click(function() {
-          $slider.slick('slickNext');
-      });
+        $slider.closest('.custom-nav__slider-wrapper').find('.slider-next').click(function () {
+            $slider.slick('slickNext');
+        });
 
-      $slider.closest('.custom-nav__slider-wrapper').find('.slider-prev').click(function() {
-          $slider.slick('slickPrev');
-      });
-  });
+        $slider.closest('.custom-nav__slider-wrapper').find('.slider-prev').click(function () {
+            $slider.slick('slickPrev');
+        });
+    });
 
-  // slider counter
+    // slider counter
 
-  $('.counter-slider').each(function() {
-      var $slider = $(this);
+    $('.counter-slider').each(function () {
+        var $slider = $(this);
 
-      var currentSlide;
-      var slidesCount;
-      var sliderCounter = $slider.closest('.counter-slider__wrapper').find('.slider-counter');
-      $(sliderCounter).text('1' + 'из' + $slider.slick('getSlick').slideCount);
+        var currentSlide;
+        var slidesCount;
+        var sliderCounter = $slider.closest('.counter-slider__wrapper').find('.slider-counter');
+        $(sliderCounter).text('1' + 'из' + $slider.slick('getSlick').slideCount);
 
-      var updateSliderCounter = function(slick, currentIndex) {
-          currentSlide = slick.slickCurrentSlide() + 1;
-          slidesCount = $slider.slick('getSlick').slideCount;
-          $(sliderCounter).text(currentSlide + 'из' + slidesCount);
-      };
+        var updateSliderCounter = function (slick, currentIndex) {
+            currentSlide = slick.slickCurrentSlide() + 1;
+            slidesCount = $slider.slick('getSlick').slideCount;
+            $(sliderCounter).text(currentSlide + 'из' + slidesCount);
+        };
 
-      $slider.on('init', function(event, slick, slidesCount) {
-          updateSliderCounter(slick, slidesCount);
-      });
+        $slider.on('init', function (event, slick, slidesCount) {
+            updateSliderCounter(slick, slidesCount);
+        });
 
-      $slider.on('afterChange', function(event, slick, currentSlide) {
-          updateSliderCounter(slick, currentSlide);
-      });
-  });
+        $slider.on('afterChange', function (event, slick, currentSlide) {
+            updateSliderCounter(slick, currentSlide);
+        });
+    });
 
     // lazy load
     var lazyload = function () {
