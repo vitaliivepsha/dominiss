@@ -1,0 +1,337 @@
+.contacts-section {
+  padding-top: 70px;
+  padding-bottom: 44px;
+  @media (max-width: 767px) {
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+}
+
+.contacts-inner {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+.contacts-aside {
+  @media (max-width: 940px) {
+    display: none;
+  }
+  & span {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  & ul {
+    & li {
+      & a {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        min-width: 210px;
+        height: 40px;
+        padding: 5px 12px;
+        font-size: 14px;
+        line-height: 130%;
+        color: $black;
+        letter-spacing: 0.03em;
+        text-decoration: none;
+        & i {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 34px;
+          margin-right: 10px;
+        }
+      }
+      &.current a {
+        font-weight: 500;
+        background-color: $bg-gray;
+      }
+    }
+  }
+}
+
+.contacts-content {
+  flex-grow: 1;
+  display: flex;
+  max-width: 930px;
+  padding: 45px 120px 70px 120px;
+  background: $bg-gray;
+  @media (max-width: 1024px) {
+    padding: 60px;
+    padding-top: 40px;
+  }
+  @media (max-width: 940px) {
+    padding: 45px 120px 70px 120px;
+  }
+  @media (max-width: 800px) {
+    padding: 60px;
+    padding-top: 40px;
+  }
+  @media (max-width: 680px) {
+    padding: 20px 80px;
+  }
+  @media (max-width: 575px) {
+    padding: 20px 10px;
+    padding-bottom: 30px;
+  }
+  // контакты
+  & .contacts {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    @media (max-width: 680px) {
+      display: block;
+    }
+    &__about {
+      & h1 {
+        margin: 0;
+        margin-bottom: 30px;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        @media (max-width: 575px) {
+          margin-bottom: 23px;
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+      & p {
+        margin: 0;
+        margin-bottom: 40px;
+        @media (max-width: 575px) {
+          margin-bottom: 15px;
+        }
+        &:last-child {
+          @media (max-width: 575px) {
+            margin-bottom: 30px;
+          }
+        }
+      }
+      & b {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 400;
+        letter-spacing: 0.03em;
+        @media (max-width: 575px) {
+          margin-bottom: 0;
+          font-size: 12px;
+          line-height: 15px;
+        }
+      }
+
+      & span,
+      & a {
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.03em;
+        color: $dark-gray;
+        @media (max-width: 575px) {
+          font-size: 12px;
+          line-height: 15px;
+        }
+      }
+      & a:hover {
+        text-decoration: none;
+        color: $accent;
+      }
+    }
+    &__form {
+      flex-grow: 1;
+      max-width: 330px;
+      & p {
+        margin: 0;
+        margin-bottom: 40px;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.03em;
+        @media (max-width: 575px) {
+          margin-bottom: 20px;
+          font-size: 12px;
+          line-height: 15px;
+        }
+      }
+
+      & .input-wrapper {
+        height: 49px;
+        margin-bottom: 20px;
+        @media (max-width: 575px) {
+          margin-bottom: 5px;
+          height: 40px;
+        }
+        &.err {
+          position: relative;
+          & input {
+            border-bottom: 1px solid $accent;
+          }
+          & .validate-error {
+            position: absolute;
+            right: 0;
+            top: 43px;
+            @media (max-width: 575px) {
+              top: 28px;
+            }
+
+            width: fit-content;
+          }
+        }
+
+        &:last-of-type {
+          margin-bottom: 50px;
+        }
+        & input {
+          width: 100%;
+          margin: 0;
+          padding: 12px 0;
+          padding-right: 12px;
+          font-size: 14px;
+          line-height: 17px;
+          letter-spacing: 0.03em;
+          border: none;
+          border-bottom: 1px solid $border;
+          background: none;
+          color: $dark-gray;
+          @media (max-width: 575px) {
+            padding: 5px 0;
+            font-size: 12px;
+            line-height: 15px;
+          }
+        }
+        & textarea {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          padding-top: 12px;
+          font-size: 14px;
+          line-height: 17px;
+          letter-spacing: 0.03em;
+          border: none;
+          border-bottom: 1px solid $border;
+          background: none;
+          color: $dark-gray !important;
+          resize: none;
+          @media (max-width: 575px) {
+            padding-top: 10px;
+            height: 30px;
+            font-size: 12px;
+            line-height: 15px;
+          }
+        }
+      }
+    }
+    & button.btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 266px;
+      height: 40px;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      font-weight: normal;
+      letter-spacing: 0.03em;
+      text-transform: none;
+      background-color: $black;
+      color: #fff;
+      &:hover {
+        background-color: transparent;
+        color: #000;
+      }
+      @media (max-width: 575px) {
+        width: 140px;
+        height: 35px;
+      }
+    }
+  }
+  // faq
+  & .contacts-faq {
+    width: 100%;
+    border-bottom: 1px solid $border;
+    @media (max-width: 575px) {
+      margin-bottom: 15px;
+    }
+    & h1 {
+      margin: 0;
+      margin-bottom: 30px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      @media (max-width: 575px) {
+        margin-bottom: 23px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    & .acc-title {
+      position: relative;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      border-top: 1px solid $border;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      @media (max-width: 575px) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: 9px;
+        height: 1px;
+        margin-right: 20px;
+        background-color: $dark-gray;
+        transition: transform 0.3s;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: 9px;
+        height: 1px;
+        margin-right: 20px;
+        background-color: $dark-gray;
+        transform: rotate(90deg);
+        transition: transform 0.3s;
+      }
+      &.active {
+        &::before {
+          transform: rotate(0);
+        }
+      }
+      &:first-child {
+        padding-top: 0;
+        border-top: none;
+      }
+    }
+
+    & .acc-body {
+      padding-bottom: 25px;
+      @media (max-width: 575px) {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
