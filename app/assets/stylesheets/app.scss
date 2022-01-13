@@ -1,14 +1,14 @@
-@import 'variables';
-@import 'vendor';
-@import 'fonts';
-@import 'mixin';
+@import "variables";
+@import "vendor";
+@import "fonts";
+@import "mixin";
 
-html{
+html {
   //width: 100vw;
   //overflow-x: hidden;
 }
 
-body{
+body {
   min-width: 320px;
   max-width: 100vw;
   overflow-x: hidden;
@@ -23,93 +23,98 @@ body{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  @include bp(md){
+  @include bp(md) {
     display: block;
   }
-  &.active{
+  &.active {
     height: 100vh;
     overflow: hidden;
   }
   &.swal2-shown {
     position: static;
   }
-  &.show-menu{
-    @include bp(xs){
+  &.show-menu {
+    @include bp(xs) {
       overflow: hidden;
       height: 100vw;
     }
-    .main-wrapper{
-      @include bp(xs){
+    .main-wrapper {
+      @include bp(xs) {
         overflow: hidden;
       }
     }
-    .side-menu{
+    .side-menu {
       left: 0;
     }
-    .overlay{
+    .overlay {
       opacity: 1;
       z-index: 1022;
     }
   }
-  &.show-filters{
-    @include bp(xs){
+  &.show-filters {
+    @include bp(xs) {
       overflow: hidden;
       height: 100vw;
     }
-    .main-wrapper{
-      @include bp(xs){
+    .main-wrapper {
+      @include bp(xs) {
         overflow: hidden;
       }
     }
-    .catalog-filters{
+    .catalog-filters {
       right: 0;
     }
-    .overlay{
+    .overlay {
       opacity: 1;
       z-index: 1022;
     }
   }
 }
 
-ol, ul {
+ol,
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-*, a, .slick-slide{
+*,
+a,
+.slick-slide {
   outline: none;
-  &:focus{
+  &:focus {
     outline: none;
   }
 }
 
-a{
-  transition: .2s linear;
+a {
+  transition: 0.2s linear;
 }
 
-svg{
-  *{
-    transition: linear .2s;
+svg {
+  * {
+    transition: linear 0.2s;
   }
 }
 
-main{
+main {
   flex: 1 0 auto;
   position: relative;
 }
 
-.section{
+.section {
   clear: both;
 }
 
-.container, .row{
-  &:before, &:after{
+.container,
+.row {
+  &:before,
+  &:after {
     display: none;
   }
 }
 
-.container{
+.container {
   width: 1440px;
   max-width: 100%;
   @include bp(xxxl){
@@ -117,7 +122,7 @@ main{
   }
 }
 
-.overlay{
+.overlay {
   background: rgba(51, 51, 51, 0.7);
   position: fixed;
   left: 0;
@@ -130,32 +135,33 @@ main{
   max-height: 100vh;
 }
 
-.input-wrapper{
+.input-wrapper {
   position: relative;
-  &.err{
-    .input, .textarea{
+  &.err {
+    .input,
+    .textarea {
       border-color: $black;
     }
-    &:after{
+    &:after {
       position: absolute;
-      content: '';
+      content: "";
       right: 0;
       bottom: 4px;
       width: 24px;
       height: 24px;
     }
   }
-  &.succ{
-    &:after{
+  &.succ {
+    &:after {
       position: absolute;
-      content: '';
+      content: "";
       right: 0;
       bottom: 4px;
       width: 24px;
       height: 24px;
     }
   }
-  .validate-error{
+  .validate-error {
     color: $accent;
     font-size: 12px;
     line-height: 14px;
@@ -228,7 +234,7 @@ main{
   }
 }*/
 
-.input{
+.input {
   width: 100%;
   border: none;
   border-bottom: 1px solid $black;
@@ -241,17 +247,17 @@ main{
   color: $black;
   -webkit-appearance: none;
   appearance: none;
-  &::placeholder{
+  &::placeholder {
     color: $gray;
   }
-  &:focus{
-    &::placeholder{
+  &:focus {
+    &::placeholder {
       color: transparent;
     }
   }
 }
 
-.textarea{
+.textarea {
   width: 100%;
   border: none;
   border-bottom: 1px solid $black;
@@ -265,11 +271,11 @@ main{
   resize: none;
   -webkit-appearance: none;
   appearance: none;
-  &::placeholder{
+  &::placeholder {
     color: $gray;
   }
-  &:focus{
-    &::placeholder{
+  &:focus {
+    &::placeholder {
       color: transparent;
     }
   }
@@ -282,57 +288,57 @@ main{
 }
 
 // Header
-@import 'header';
+@import "header";
 
 // Main
-@import 'main/section-1';
-@import 'main/section-2';
-@import 'main/section-3';
-@import 'main/section-4';
-@import 'main/section-5';
-@import 'main/section-6';
-@import 'main/section-7';
-@import 'main/section-8';
-@import 'main/section-9';
+@import "main/section-1";
+@import "main/section-2";
+@import "main/section-3";
+@import "main/section-4";
+@import "main/section-5";
+@import "main/section-6";
+@import "main/section-7";
+@import "main/section-8";
+@import "main/section-9";
 
 // Footer
-@import 'footer';
+@import "footer";
 
 // Contacts
-@import 'contacts';
+@import "contacts";
 
 // Delivery
-@import 'delivery';
+@import "delivery";
 
 // Catalog
-@import 'catalog';
+@import "catalog";
 
 // Product
-@import 'product';
+@import "product";
 
 // Cart
-@import 'cart';
+@import "cart";
 
 // Checkout
-@import 'checkout';
+@import "checkout";
 
 // 404
-@import '404';
+@import "404";
 
 // Blog
-@import 'blog';
+@import "blog";
 
 // About
-@import 'about';
+@import "about";
 
 // Breadcrumbs
-@import 'breadcrumbs';
+@import "breadcrumbs";
 
 // Pagination
-@import 'pagination';
+@import "pagination";
 
 // Popup
-@import 'popup';
+@import "popup";
 
 // Text
-@import 'text';
+@import "text";
