@@ -117,7 +117,7 @@ main {
 .container {
   width: 1440px;
   max-width: 100%;
-  @include bp(xxxl){
+  @include bp(xxxl) {
     width: 1400px;
   }
 }
@@ -309,6 +309,9 @@ main {
 
 // Delivery
 @import "delivery";
+
+// Shop
+@import "shop";
 
 // Catalog
 @import "catalog";

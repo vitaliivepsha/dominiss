@@ -11,10 +11,11 @@ if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/contacts-faq.html');
     require('./assets/templates/layouts/contacts-text.html');
     require('./assets/templates/layouts/contacts-sizes.html');
-
     require('./assets/templates/layouts/about-text.html');
     require('./assets/templates/layouts/about-press-room.html');
     require('./assets/templates/layouts/about-schedule-events.html');
+    require('./assets/templates/layouts/shop.html');
+
 }
 
 // Depends
@@ -240,10 +241,10 @@ $(function () {
     $('.product-video').on('click', function () {
         $(this).removeClass('product-video');
         $(this).find('.product-video__play').hide();
-        $(this).find('picture').hide().closest('.product-pic').find('video').show().play();
+        $(this).find('picture').hide().closest('.product-pic').find('.prod-video').show().play();
     });
 
-    $('video').click(function () {
+    $('.prod-video').click(function () {
         $(this).closest('.product-pic').find('.product-video__play').toggleClass('show');
         this.paused ? this.play() : this.pause();
     });
@@ -347,10 +348,22 @@ $(".acc-title").click(function () {
     $(".acc-title").not(this).removeClass("active").next().slideUp();
 });
 
+// shop video
+
+$('.shop-video').on('click', function () {
+    $(this).removeClass('shop-video');
+    $(this).find('.shop-video__play').hide();
+    $(this).find('picture').hide().closest('.shop-pic').find('.the-video').show().play();
+});
+
+$('.the-video').click(function () {
+    $(this).closest('.shop-pic').find('.shop-video__play').toggleClass('show');
+    this.paused ? this.play() : this.pause();
+});
+
 
 $('.popup-link').magnificPopup({
     type: 'inline',
     removalDelay: 300,
-    mainClass: 'my-mfp-zoom-in',
+    mainClass: 'my-mfp-zoom-in'
 });
-
