@@ -14,6 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 
     require('./assets/templates/layouts/about-text.html');
     require('./assets/templates/layouts/about-press-room.html');
+    require('./assets/templates/layouts/about-schedule-events.html');
 }
 
 // Depends
@@ -346,4 +347,10 @@ $(".acc-title").click(function () {
     $(".acc-title").not(this).removeClass("active").next().slideUp();
 });
 
+
+$('.popup-link').magnificPopup({
+    type: 'inline',
+    removalDelay: 300,
+    mainClass: 'my-mfp-zoom-in',
+});
 

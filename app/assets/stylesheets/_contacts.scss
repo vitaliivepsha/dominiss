@@ -180,9 +180,13 @@
           & .validate-error {
             position: absolute;
             right: 0;
-            top: 43px;
+            top: 12px;
+            bottom: auto;
+            width: 100% !important;
+            background: #f8f8f8;
+            pointer-events: none;
             @media (max-width: 575px) {
-              top: 28px;
+              top: 6px;
             }
 
             width: fit-content;
