@@ -1,7 +1,7 @@
 
 @mixin bp($point) {
   @if $point == xxxl {
-    @media only screen and (max-width: 1919px) {
+    @media only screen and (max-width: 1479px) {
       @content;
     }
   } @else if $point == xxl {
