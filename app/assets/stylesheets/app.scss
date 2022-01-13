@@ -117,6 +117,9 @@ main {
 .container {
   width: 1440px;
   max-width: 100%;
+  @include bp(xxxl){
+    width: 1400px;
+  }
 }
 
 .overlay {

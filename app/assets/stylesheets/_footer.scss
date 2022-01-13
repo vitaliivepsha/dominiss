@@ -20,16 +20,28 @@
 
 .footer-left{
   display: flex;
+  @include bp(xxxl){
+    width: calc(100% - 450px);
+  }
 }
 
 .footer-menu{
   display: flex;
+  @include bp(xxxl){
+    width: 100%;
+  }
   >li{
     width: 360px;
     min-width: 240px;
     padding-right: 15px;
+    @include bp(xxxl){
+      width: 33.33333%;
+    }
     &:first-child{
       width: 240px;
+      @include bp(xxxl){
+        width: 33.33333%;
+      }
     }
     span{
       display: block;
