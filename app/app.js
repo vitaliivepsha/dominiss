@@ -222,7 +222,7 @@ $(function() {
     });
   }, 1000);
 
-    // scroll
+  // scroll
 
   $('.scroll-wrapper').each(function() {
     const ps = new PerfectScrollbar($(this)[0], {
