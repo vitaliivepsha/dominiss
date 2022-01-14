@@ -4,8 +4,8 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  @include bp(xs){
-    height: 64px;
+  @include bp(md){
+    display: none;
   }
 }
 
@@ -25,6 +25,9 @@
 
 .header-right{
   width: calc(100% - 374px);
+  @include bp(lg){
+    width: calc(100% - 320px);
+  }
 }
 
 .header-top{
@@ -39,6 +42,9 @@
   display: flex;
   li{
     margin-right: 20px;
+    @include bp(lg){
+      margin-right: 10px;
+    }
     a{
       display: flex;
       align-items: center;
@@ -97,6 +103,9 @@
 .header-fav{
   display: flex;
   margin-right: 40px;
+  @include bp(md){
+    margin-right: 13px;
+  }
 }
 
 .header-cart{
@@ -110,8 +119,12 @@
   width: 100%;
   position: absolute;
   bottom: 0;
+  @include bp(xxl){
+    padding: 0 300px;
+  }
   @include bp(lg){
-    display: none;
+    padding: 0;
+    justify-content: flex-end;
   }
   >li{
     &:hover{
@@ -350,4 +363,126 @@
 
 .ps:hover > .ps__rail-x, .ps:hover > .ps__rail-y, .ps--focus > .ps__rail-x, .ps--focus > .ps__rail-y, .ps--scrolling-x > .ps__rail-x, .ps--scrolling-y > .ps__rail-y {
   opacity: 1;
+}
+
+.mobile-header{
+  display: none;
+  background-color: #fff;
+  border-bottom: 1px solid $border;
+  @include bp(md){
+    display: block;
+  }
+}
+
+.mobile-header__alert{
+  position: relative;
+  padding: 7px 45px;
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $black;
+  color: #fff;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.03em;
+  p{
+    margin-bottom: 0;
+  }
+}
+
+.mobile-header__alert-close{
+  position: absolute;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-header__wrapper{
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-logo{
+  display: flex;
+}
+
+.mobile-header__right{
+  display: flex;
+}
+
+.mobile-menu__btn {
+  display: none;
+  overflow: hidden;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  @include bp(md) {
+    display: block;
+  }
+  span {
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: $black;
+    transition: background 0.3s;
+    &:before {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $black;
+      content: "";
+      top: -6px;
+      transition-duration: 0.3s, 0.3s;
+      transition-delay: 0.3s, 0s;
+      transition-property: top, transform;
+    }
+    &:after {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $black;
+      content: "";
+      bottom: -6px;
+      transition-duration: 0.3s, 0.3s;
+      transition-delay: 0.3s, 0s;
+      transition-property: top, transform;
+      border-radius: 1px;
+    }
+  }
+  &.active {
+    span {
+      background: none;
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+        transition-delay: 0s, 0.3s;
+      }
+      &:after {
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition-delay: 0s, 0.3s;
+      }
+    }
+  }
 }

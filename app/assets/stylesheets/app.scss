@@ -51,22 +51,10 @@ body {
       z-index: 1022;
     }
   }
-  &.show-filters {
-    @include bp(xs) {
+  &.opened-filters {
+    @include bp(md) {
       overflow: hidden;
       height: 100vw;
-    }
-    .main-wrapper {
-      @include bp(xs) {
-        overflow: hidden;
-      }
-    }
-    .catalog-filters {
-      right: 0;
-    }
-    .overlay {
-      opacity: 1;
-      z-index: 1022;
     }
   }
 }

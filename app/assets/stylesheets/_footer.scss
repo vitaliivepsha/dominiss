@@ -23,6 +23,9 @@
   @include bp(xxxl){
     width: calc(100% - 450px);
   }
+  @include bp(lg){
+    width: calc(100% - 350px);
+  }
 }
 
 .footer-menu{
@@ -37,10 +40,16 @@
     @include bp(xxxl){
       width: 33.33333%;
     }
+    @include bp(lg){
+      min-width: 25%;
+    }
     &:first-child{
       width: 240px;
       @include bp(xxxl){
         width: 33.33333%;
+      }
+      @include bp(lg){
+        width: 25%;
       }
     }
     span{
@@ -73,6 +82,9 @@
 
 .footer-right{
   min-width: 450px;
+  @include bp(lg){
+    min-width: 350px;
+  }
   >span{
     display: block;
     font-weight: 500;
