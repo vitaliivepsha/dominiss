@@ -436,3 +436,14 @@ $('.popup-link').magnificPopup({
     removalDelay: 300,
     mainClass: 'my-mfp-zoom-in'
 });
+
+// tabs
+
+$('.tabs').each(function () {
+    let tabs = $(this);
+    tabs.find('.tabs-content-item').not(':first').hide();
+    tabs.find('.tabs-caption-item').click(function () {
+        tabs.find('.tabs-caption-item').removeClass('active').eq($(this).index()).addClass('active');
+        tabs.find('.tabs-content-item').hide().eq($(this).index()).fadeIn(500);
+    }).eq(0).addClass('active');
+});
