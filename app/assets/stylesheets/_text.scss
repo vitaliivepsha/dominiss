@@ -1,6 +1,12 @@
 .txt-section {
   position: relative;
   padding: 50px 0 80px;
+  padding-top: 0;
+  &.main {
+    @media (max-width: 767px) {
+      padding-bottom: 20px;
+    }
+  }
   /*&:after{
     position: absolute;
     content: '';
@@ -21,6 +27,7 @@
   max-width: 100%;
   margin: 0 auto;
   > h1 {
+    font-family: $CormorantSC;
     margin-top: 0;
     text-align: center;
     margin-bottom: 17px;

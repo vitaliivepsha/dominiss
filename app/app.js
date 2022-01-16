@@ -16,6 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/about-schedule-events.html');
     require('./assets/templates/layouts/shop.html');
     require('./assets/templates/layouts/shops.html');
+    require('./assets/templates/layouts/dresses.html');
 
 }
 
