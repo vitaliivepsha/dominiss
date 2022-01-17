@@ -431,6 +431,25 @@ $('.the-video').click(function () {
     this.paused ? this.play() : this.pause();
 });
 
+// dress video
+
+$(".dress-video").on("click", function () {
+    $(this).removeClass("dress-video");
+    $(this).find(".dress-video__play").hide();
+    $(this)
+        .find("picture")
+        .hide()
+        .closest(".dress-pic")
+        .find(".dress-the-video")
+        .show()
+        .play();
+});
+
+$(".dress-the-video").click(function () {
+    $(this).closest(".dress-pic").find(".dress-video__play").toggleClass("show");
+    this.paused ? this.play() : this.pause();
+});
+
 
 $('.popup-link').magnificPopup({
     type: 'inline',
