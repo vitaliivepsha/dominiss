@@ -1,0 +1,82 @@
+.policy {
+  max-width: 1170px;
+  margin: 50px auto;
+  padding: 60px 120px;
+  background: $bg-gray;
+  @media (max-width: 991px) {
+    padding: 30px 60px;
+  }
+  @media (max-width: 767px) {
+    padding: 30px;
+    margin: 30px auto;
+  }
+  & h1 {
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    @media (max-width: 767px) {
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  & h2 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    font-weight: 400;
+    color: $dark-gray;
+    @media (max-width: 767px) {
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+  & p {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    color: $dark-gray;
+    @media (max-width: 767px) {
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+  & li {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    color: $dark-gray;
+    @media (max-width: 767px) {
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  & a {
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+    color: $dark-gray;
+    word-break: break-all;
+    @media (max-width: 767px) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+    &:hover {
+      color: $accent;
+    }
+  }
+}

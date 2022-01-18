@@ -17,6 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/shop.html');
     require('./assets/templates/layouts/shops.html');
     require('./assets/templates/layouts/dresses.html');
+    require('./assets/templates/layouts/policy.html');
 
 }
 
@@ -467,3 +468,40 @@ $('.tabs').each(function () {
         tabs.find('.tabs-content-item').hide().eq($(this).index()).fadeIn(500);
     }).eq(0).addClass('active');
 });
+
+// basket
+
+$('.header-cart .header-cart__icon').on('click', function () {
+    $(this).parent().toggleClass('active');
+    $('body').addClass('header-cart-open');
+})
+
+$('.header-cart .header-cart__inner > button').on('click', function () {
+    $(this).parent().parent().toggleClass('active');
+    $('body').removeClass('header-cart-open');
+})
+
+$('.header-cart-item button').on('click', function () {
+    $(this).parent().css('display', 'none');
+
+})
+
+// ===============
+
+if (!$(".header-cart-item").length) {
+    $('.header-cart__inner').addClass('empty');
+    $('.header-cart-order').html("В новинки");
+
+} else {
+    $('.header-cart__inner').removeClass('empty');
+    $('.header-cart-order').html("Оформить заказ");
+}
+
+
+
+
+
+
+
+
+
