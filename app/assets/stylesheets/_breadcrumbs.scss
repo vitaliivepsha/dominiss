@@ -5,7 +5,19 @@
   letter-spacing: 0.03em;
   padding: 10px 0 16px;
   @include bp(xs){
-    padding: 11px 15px 11px 20px;
+    padding: 11px 0;
+  }
+  >*{
+    @include bp(xs){
+      display: none;
+    }
+    &:nth-last-child(2){
+      @include bp(xs){
+        position: relative;
+        display: block;
+        padding-left: 20px;
+      }
+    }
   }
   a{
     text-decoration: none;
@@ -13,7 +25,17 @@
     color: $gray;
     &:hover, &:focus{
       text-decoration: none;
-      &:after{
+    }
+    &:before{
+      position: absolute;
+      display: none;
+      content: '';
+      background: url('../images/icons/arrow-left.svg') no-repeat;
+      width: 15px;
+      height: 15px;
+      left: -3px;
+      @include bp(xs){
+        display: block;
       }
     }
     &:after{
@@ -23,6 +45,9 @@
       line-height: 15px;
       margin-left: 4px;
       margin-right: 1px;
+      @include bp(xs){
+        display: none;
+      }
     }
     &:last-child{
       &:after{

@@ -16,6 +16,9 @@
 .footer-wrapper{
   display: flex;
   justify-content: space-between;
+  @include bp(md){
+    flex-direction: column;
+  }
 }
 
 .footer-left{
@@ -25,6 +28,9 @@
   }
   @include bp(lg){
     width: calc(100% - 350px);
+  }
+  @include bp(md){
+    width: 100%;
   }
 }
 
@@ -84,6 +90,12 @@
   min-width: 450px;
   @include bp(lg){
     min-width: 350px;
+  }
+  @include bp(md){
+    width: 450px;
+    min-width: unset;
+    max-width: 100%;
+    margin-top: 40px;
   }
   >span{
     display: block;
