@@ -26,6 +26,7 @@
     text-align: center;
     color: $black;
     @media (max-width: 767px) {
+      margin-bottom: 12px;
       font-size: 48px;
       line-height: 58px;
     }
@@ -41,6 +42,7 @@
     letter-spacing: 0.03em;
     text-align: center;
     @media (max-width: 767px) {
+      margin-bottom: 12px;
       font-size: 18px;
       line-height: 22px;
     }
@@ -53,12 +55,17 @@
     color: $dark-gray;
     letter-spacing: 0.03em;
     text-align: center;
-    &:last-of-type {
-      margin-bottom: 53px;
-    }
     @media (max-width: 767px) {
+      margin-bottom: 12px;
       font-size: 12px;
       line-height: 15px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 53px;
+      @media (max-width: 767px) {
+        margin-bottom: 20px;
+      }
     }
   }
   &__btn-wrapper {

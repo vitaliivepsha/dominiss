@@ -4,6 +4,47 @@
   @media (max-width: 767px) {
     padding: 25px 0;
   }
+
+  &.dress .main-dresses:nth-child(odd) {
+    & .main-dresses__about {
+      order: 1;
+    }
+  }
+  &.dress .main-dresses:nth-child(even) {
+    & .main-dresses__about {
+      order: -1;
+    }
+  }
+
+  &.brides {
+    background: $bg-gray;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 120px;
+    @media (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+    .main-dresses {
+      &__pic {
+        max-height: 900px;
+      }
+      &__about {
+        & p {
+        }
+        & b {
+          display: block;
+          margin-bottom: 20px;
+          font-size: 14px;
+          line-height: 17px;
+          text-align: center;
+          letter-spacing: 0.03em;
+          text-align: center;
+          font-weight: 400;
+          color: $dark-gray;
+        }
+      }
+    }
+  }
 }
 
 .main-dresses {
@@ -22,6 +63,7 @@
       order: -1;
     }
   }
+
   &:last-child {
     margin-bottom: 0;
   }

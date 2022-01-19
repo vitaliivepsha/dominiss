@@ -1,0 +1,300 @@
+.section-dress-brands {
+  background-color: $bg-gray;
+  padding: 70px 0;
+  @media (max-width: 991px) {
+    padding: 25px 0;
+  }
+}
+
+.brands {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 100px;
+  @media (max-width: 1480px) {
+    column-gap: 50px;
+  }
+  @media (max-width: 1199px) {
+    column-gap: 20px;
+  }
+  @media (max-width: 575px) {
+    row-gap: 20px;
+  }
+
+  & li {
+    @media (max-width: 991px) {
+      width: 18vw;
+    }
+    @media (max-width: 767px) {
+      width: 20vw;
+    }
+    @media (max-width: 440px) {
+      width: 26vw;
+    }
+
+    & picture {
+      width: 100%;
+      height: 100%;
+      & img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.wedding-dresses {
+  & > h1 {
+    margin: 0;
+    margin-top: 24px;
+    font-family: $CormorantSC;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    @media (max-width: 767px) {
+      margin-top: 10px;
+      font-size: 21px;
+      line-height: 25px;
+    }
+  }
+  & > b {
+    display: block;
+    margin-bottom: 24px;
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    text-align: center;
+    color: $gray;
+    letter-spacing: 0.03em;
+    @media (max-width: 767px) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+}
+
+// wedding-dresses-list
+
+.wedding-dresses-list {
+  margin-bottom: 100px;
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+  }
+}
+
+.wedding-dresses-slider {
+  & .slick-list {
+    padding: 0;
+    margin-right: -15px;
+    margin-left: -15px;
+    @media (max-width: 767px) {
+      margin-right: -20px;
+      margin-left: -20px;
+    }
+  }
+  & .slick-slide {
+    margin: 0 15px;
+    @media (max-width: 767px) {
+      margin: 0 5px;
+    }
+  }
+  & .slick-arrow {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    font-size: 0;
+    background-color: rgba(#fff, 0.6);
+    @media (max-width: 767px) {
+      width: 16px;
+      height: 21px;
+    }
+    &.slick-prev {
+      left: -100px;
+      z-index: 100;
+      @media (max-width: 1640px) {
+        left: 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 17px;
+        height: 28px;
+        -webkit-mask: url("../images/icons/arrow-left-slider.svg");
+        mask: url("../images/icons/arrow-left-slider.svg");
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        background: $black;
+        transition: background 0.3s;
+        @media (max-width: 767px) {
+          width: 8px;
+          height: 14px;
+        }
+      }
+      &:hover::before {
+        background: $dark-gray;
+      }
+    }
+    &.slick-next {
+      right: -100px;
+      @media (max-width: 1640px) {
+        right: 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        height: 28px;
+        width: 17px;
+        -webkit-mask: url("../images/icons/arrow-right-slider.svg");
+        mask: url("../images/icons/arrow-right-slider.svg");
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        background: $black;
+        transition: background 0.3s;
+        @media (max-width: 767px) {
+          width: 8px;
+          height: 14px;
+        }
+      }
+      &:hover::before {
+        background: $dark-gray;
+      }
+    }
+    &.slick-disabled {
+      opacity: 0.4;
+    }
+  }
+
+  & .wedding-dresses-slide {
+    padding-bottom: 70px;
+    @media (max-width: 767px) {
+      padding-bottom: 30px;
+    }
+    & picture {
+      display: block;
+      margin-bottom: 17px;
+      width: 100%;
+      max-width: 690px;
+      height: 100%;
+      max-height: 722px;
+      @media (max-width: 767px) {
+        margin-bottom: 10px;
+      }
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    & span {
+      display: block;
+      margin-bottom: 12px;
+      font-family: $CormorantSC;
+      font-size: 24px;
+      line-height: 29px;
+      text-align: center;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      @media (max-width: 767px) {
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+    & a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      min-width: 220px;
+      min-height: 40px;
+      margin: 0 auto;
+      padding: 5px;
+      border: 1px solid $black;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      letter-spacing: 0.03em;
+      color: $black;
+      text-transform: uppercase;
+      text-decoration: none;
+      @media (max-width: 767px) {
+        min-width: 126px;
+        min-height: 35px;
+        font-size: 13px;
+        line-height: 16px;
+      }
+      &:hover {
+        color: #ffffff;
+        background-color: $black;
+      }
+    }
+  }
+}
+
+.video-section.dress {
+  & .video-about {
+    margin-top: 30px;
+  }
+}
+
+.dress-pic {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-height: 892px;
+  cursor: pointer;
+  > picture {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .dress-the-video {
+    width: 100%;
+    height: 100%;
+    max-width: 1264px;
+    display: none;
+    cursor: pointer;
+    z-index: 1;
+  }
+}
+
+.dress-video__play {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  pointer-events: none;
+}
