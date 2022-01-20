@@ -13,7 +13,7 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   font-weight: 400;
-  @include bp(md){
+  @include bp(md) {
     display: none;
   }
 }
@@ -21,7 +21,7 @@
 .catalog-pic {
   height: calc(37.5vw - 20px);
   padding: 0 10px;
-  @include bp(xs){
+  @include bp(xs) {
     padding: 0;
     height: 106vw;
     margin-bottom: 10px;
@@ -29,14 +29,14 @@
   picture {
     width: 100%;
     height: 100%;
-    &.catalog-pic__main{
-      @include bp(xs){
+    &.catalog-pic__main {
+      @include bp(xs) {
         display: none;
       }
     }
-    &.catalog-pic__mob{
+    &.catalog-pic__mob {
       display: none;
-      @include bp(xs){
+      @include bp(xs) {
         display: block;
       }
     }
@@ -46,11 +46,11 @@
       object-fit: cover;
     }
   }
-  +.catalog-title__wrapper {
-    @include bp(xs){
+  + .catalog-title__wrapper {
+    @include bp(xs) {
       padding-top: 10px;
     }
-    &:before{
+    &:before {
       display: none;
     }
   }
@@ -60,10 +60,10 @@
   position: relative;
   padding: 50px 0 42px;
   text-align: center;
-  @include bp(xs){
+  @include bp(xs) {
     padding: 20px 0 14px;
   }
-  &:before{
+  &:before {
     position: absolute;
     content: "";
     left: 0;
@@ -92,9 +92,12 @@
   letter-spacing: 0.03em;
   text-align: center;
   text-transform: uppercase;
-  @include bp(xs){
+  @include bp(xs) {
     font-size: 16px;
     line-height: 20px;
+  }
+  &.search {
+    text-transform: none;
   }
 }
 
@@ -106,7 +109,7 @@
   line-height: 17px;
   letter-spacing: 0.03em;
   color: $gray;
-  @include bp(xs){
+  @include bp(xs) {
     font-size: 12px;
     line-height: 15px;
   }
@@ -148,7 +151,7 @@
   &.checked-filters {
     .catalog-filters__clear {
       display: flex;
-      @include bp(md){
+      @include bp(md) {
         display: none;
       }
     }
@@ -160,7 +163,7 @@
     }
     .catalog-filters__checked-list {
       display: flex;
-      @include bp(md){
+      @include bp(md) {
         display: none;
       }
     }
@@ -175,7 +178,7 @@
   flex-wrap: wrap;
   transition: linear 0.2s;
   position: relative;
-  @include bp(xs){
+  @include bp(xs) {
     padding: 13px 0;
   }
 }
@@ -187,7 +190,7 @@
   line-height: 17px;
   letter-spacing: 0.03em;
   cursor: pointer;
-  @include bp(xs){
+  @include bp(xs) {
     font-size: 11px;
     line-height: 13px;
     margin-right: 12px;
@@ -196,8 +199,8 @@
     margin-left: 5px;
     margin-top: 2px;
     transition: linear 0.2s;
-    @include bp(xs){
-      svg{
+    @include bp(xs) {
+      svg {
         width: 13px;
       }
     }
@@ -205,7 +208,7 @@
   &.active {
     svg {
       transform: scale(1, -1);
-      @include bp(md){
+      @include bp(md) {
         transform: scale(1, 1);
       }
     }
@@ -275,7 +278,7 @@
   line-height: 17px;
   letter-spacing: 0.03em;
   cursor: pointer;
-  @include bp(xs){
+  @include bp(xs) {
     font-size: 11px;
     line-height: 13px;
   }
@@ -284,40 +287,40 @@
   }
   > span {
     margin-left: 3px;
-    @include bp(xs){
+    @include bp(xs) {
       display: none;
     }
   }
   > svg {
     margin-left: 5px;
     margin-top: 2px;
-    @include bp(xs){
-      svg{
+    @include bp(xs) {
+      svg {
         width: 13px;
       }
     }
   }
 }
 
-.catalog-views{
+.catalog-views {
   display: none;
   flex: 1 0 auto;
   justify-content: flex-end;
   margin-right: -4px;
-  @include bp(xs){
+  @include bp(xs) {
     display: flex;
   }
 }
 
-.calalog-view{
+.calalog-view {
   width: 23px;
   height: 23px;
   display: flex;
   align-items: center;
   justify-content: center;
-  &.active{
-    svg{
-      rect{
+  &.active {
+    svg {
+      rect {
         stroke: $black;
       }
     }
@@ -329,14 +332,14 @@
   width: 100%;
   position: relative;
   padding-bottom: 40px;
-  @include bp(xs){
+  @include bp(xs) {
     padding-bottom: 10px;
   }
   &.opened-filters {
     .catalog-filters {
       width: 25%;
       padding-right: 10px;
-      @include bp(md){
+      @include bp(md) {
         width: 100%;
         padding-right: 0;
         left: 0;
@@ -345,13 +348,13 @@
     }
     .catalog-items {
       width: calc(75% + 10px);
-      @include bp(md){
+      @include bp(md) {
         width: auto;
         flex: 1 0 auto;
       }
       .col {
         width: 33.333333%;
-        @include bp(md){
+        @include bp(md) {
           width: 50%;
         }
       }
@@ -367,7 +370,7 @@
   left: 0;
   transition: width ease-in-out 0.3s;
   overflow: hidden;
-  @include bp(md){
+  @include bp(md) {
     position: fixed;
     bottom: 0;
     z-index: 10;
@@ -379,15 +382,15 @@
   min-height: 400px;
   padding-right: 15px;
   transition: linear 0.2s;
-  @include bp(lg){
+  @include bp(lg) {
     padding-right: 0;
   }
-  @include bp(md){
+  @include bp(md) {
     height: 100vh;
   }
   &.fixed {
     margin-top: 37px;
-    @include bp(md){
+    @include bp(md) {
       margin-top: 0;
     }
     .catalog-filters__list {
@@ -395,7 +398,7 @@
     }
     &.checked-filters {
       margin-top: 62px;
-      @include bp(md){
+      @include bp(md) {
         margin-top: 0;
       }
       .catalog-filters__list {
@@ -405,7 +408,7 @@
   }
 }
 
-.catalog-filters__head-mob{
+.catalog-filters__head-mob {
   height: 45px;
   position: relative;
   display: none;
@@ -417,10 +420,10 @@
   line-height: 16px;
   letter-spacing: 0.03em;
   color: $black;
-  @include bp(md){
+  @include bp(md) {
     display: flex;
   }
-  .catalog-filters__close{
+  .catalog-filters__close {
     position: absolute;
     left: 15px;
     top: 50%;
@@ -431,7 +434,7 @@
 .catalog-filters__inner {
   position: relative;
   overflow: auto;
-  @include bp(md){
+  @include bp(md) {
     height: calc(100vh - 125px);
     padding-left: 15px;
     padding-bottom: 30px;
@@ -440,14 +443,14 @@
     overflow-y: scroll;
     background: transparent;
     width: 3px;
-    transition: linear .2s;
+    transition: linear 0.2s;
     box-shadow: 1px 0 0 #c4c4c4;
   }
   &::-webkit-scrollbar-thumb {
     background: $gray;
     border-radius: 0;
     width: 3px;
-    transition: linear .2s;
+    transition: linear 0.2s;
     cursor: grab;
   }
 }
@@ -459,10 +462,10 @@
   align-items: center;
   justify-content: space-between;
   margin-right: 26px;
-  @include bp(lg){
+  @include bp(lg) {
     margin-right: 16px;
   }
-  @include bp(md){
+  @include bp(md) {
     display: none;
   }
   &:before {
@@ -487,20 +490,20 @@
   }
 }
 
-.catalog-filters__checked-mob{
+.catalog-filters__checked-mob {
   display: none;
   padding-top: 28px;
   padding-bottom: 17px;
   margin-right: 15px;
   border-bottom: 1px solid $border;
-  .catalog-filters__checked-list{
+  .catalog-filters__checked-list {
     margin-top: 0;
   }
-  &.checked-filters{
-    @include bp(md){
+  &.checked-filters {
+    @include bp(md) {
       display: block;
     }
-    .catalog-filters__checked-list{
+    .catalog-filters__checked-list {
       display: flex;
     }
   }
@@ -509,7 +512,7 @@
 .catalog-filters__list {
   position: relative;
   padding-right: 25px;
-  @include bp(lg){
+  @include bp(lg) {
     padding-right: 15px;
   }
 }
@@ -541,7 +544,7 @@
   cursor: pointer;
   min-height: 30px;
   margin-bottom: 15px;
-  @include bp(xs){
+  @include bp(xs) {
     margin-bottom: 10px;
     min-height: 15px;
   }
@@ -635,7 +638,7 @@
   }
 }
 
-.catalog-filters__items-counter{
+.catalog-filters__items-counter {
   font-size: 12px;
   line-height: 120%;
   opacity: 0.8;
@@ -650,27 +653,27 @@
   cursor: pointer;
 }
 
-.catalog-filters__footer-mob{
+.catalog-filters__footer-mob {
   display: none;
   height: 80px;
   background: $bg-gray;
   padding: 10px;
-  @include bp(md){
+  @include bp(md) {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .catalog-filters__items-counter{
+  .catalog-filters__items-counter {
     text-align: center;
     display: block;
     margin-bottom: 8px;
   }
 }
 
-.catalog-filters__footer-buttons{
+.catalog-filters__footer-buttons {
   display: flex;
   justify-content: center;
-  .btn{
+  .btn {
     height: 35px;
     display: flex;
     justify-content: center;
@@ -679,24 +682,24 @@
     border: 1px solid $black;
     color: $black;
     cursor: pointer;
-    transition: linear .2s;
+    transition: linear 0.2s;
     border-radius: 0;
     box-shadow: none;
     outline: none !important;
     text-decoration: none;
-    &.btn-filled{
+    &.btn-filled {
       background-color: $black;
       color: #fff;
     }
-    &.catalog-filters__btn-submit{
+    &.catalog-filters__btn-submit {
       width: 140px;
       margin: 0 5px;
     }
-    &.catalog-filters__btn-clear{
+    &.catalog-filters__btn-clear {
       width: 140px;
       margin: 0 5px;
     }
-    &.catalog-filters__btn-close{
+    &.catalog-filters__btn-close {
       width: 220px;
     }
   }
@@ -708,7 +711,7 @@
   flex-wrap: wrap;
   margin: 0 -5px;
   width: calc(100% + 10px);
-  @include bp(xs){
+  @include bp(xs) {
     margin: 0 -15px;
     flex: 1 0 auto;
     width: auto;
@@ -720,83 +723,83 @@
     padding: 0 5px;
     margin-bottom: 10px;
     float: left;
-    @include bp(md){
+    @include bp(md) {
       width: 50%;
     }
-    @include bp(xs){
+    @include bp(xs) {
       margin-bottom: 20px;
       width: calc(50% - 5px);
       padding: 0;
     }
   }
-  &.one-col{
+  &.one-col {
     .col {
       width: 100%;
-      @include bp(xs){
+      @include bp(xs) {
         width: 100%;
         margin-bottom: 30px;
       }
     }
-    .catalog-item__pic{
-      @include bp(xs){
+    .catalog-item__pic {
+      @include bp(xs) {
         height: 142vw;
       }
     }
     .catalog-item__label {
-      @include bp(xs){
+      @include bp(xs) {
         width: 30px;
         height: 30px;
       }
     }
     .catalog-item__fav {
-      @include bp(xs){
+      @include bp(xs) {
         width: 25px;
         height: 25px;
       }
-      svg{
-        @include bp(xs){
+      svg {
+        @include bp(xs) {
           width: 15px;
         }
       }
     }
     .catalog-item__pin {
-      @include bp(xs){
+      @include bp(xs) {
         width: 25px;
         height: 25px;
       }
-      svg{
-        @include bp(xs){
+      svg {
+        @include bp(xs) {
           width: 15px;
         }
       }
     }
     .catalog-item__info {
-      @include bp(xs){
+      @include bp(xs) {
         padding: 10px;
       }
     }
     .catalog-item__brand {
-      @include bp(xs){
+      @include bp(xs) {
         font-size: 10px;
         line-height: 12px;
         margin-bottom: 5px;
       }
     }
     .catalog-item__title {
-      @include bp(xs){
+      @include bp(xs) {
         max-height: 30px;
         margin-bottom: 5px;
       }
     }
     .catalog-item__price {
       > span {
-        @include bp(xs){
+        @include bp(xs) {
           margin: 0 20px;
         }
       }
     }
     .catalog-banner {
-      @include bp(xs){
+      @include bp(xs) {
         height: calc(142vw + 80px);
       }
     }
@@ -821,13 +824,13 @@
   width: 100%;
   position: relative;
   transition: linear 0.2s;
-  @include bp(xxl){
+  @include bp(xxl) {
     height: calc(35vw - 15px);
   }
-  @include bp(md){
+  @include bp(md) {
     height: calc(69vw - 15px);
   }
-  @include bp(xs){
+  @include bp(xs) {
     height: calc(74vw - 15px);
   }
   > a {
@@ -872,7 +875,7 @@
   margin-bottom: 5px;
   letter-spacing: 0.03em;
   transition: linear 0.2s;
-  @include bp(xs){
+  @include bp(xs) {
     width: 25px;
     height: 25px;
     font-size: 9px;
@@ -901,12 +904,12 @@
   margin-bottom: 5px;
   cursor: pointer;
   transition: linear 0.2s;
-  @include bp(xs){
+  @include bp(xs) {
     width: 20px;
     height: 20px;
   }
-  svg{
-    @include bp(xs){
+  svg {
+    @include bp(xs) {
       width: 12px;
     }
   }
@@ -924,12 +927,12 @@
   margin-bottom: 5px;
   cursor: pointer;
   transition: linear 0.2s;
-  @include bp(xs){
+  @include bp(xs) {
     width: 20px;
     height: 20px;
   }
-  svg{
-    @include bp(xs){
+  svg {
+    @include bp(xs) {
       width: 12px;
     }
   }
@@ -944,7 +947,7 @@
   text-decoration: none;
   text-align: center;
   transition: linear 0.2s;
-  @include bp(xs){
+  @include bp(xs) {
     height: 80px;
     padding: 6px;
   }
@@ -962,7 +965,7 @@
   margin-bottom: 3px;
   letter-spacing: 0.03em;
   transition: linear 0.2s;
-  @include bp(xs){
+  @include bp(xs) {
     font-size: 9px;
     line-height: 11px;
   }
@@ -976,7 +979,7 @@
   margin-bottom: 11px;
   letter-spacing: 0.03em;
   transition: linear 0.2s;
-  @include bp(xs){
+  @include bp(xs) {
     font-size: 12px;
     line-height: 15px;
     max-height: 45px;
@@ -991,13 +994,13 @@
   line-height: 22px;
   letter-spacing: 0.03em;
   transition: linear 0.2s;
-  @include bp(xs){
+  @include bp(xs) {
     font-size: 12px;
     line-height: 15px;
   }
   > span {
     margin: 0 10px;
-    @include bp(xs){
+    @include bp(xs) {
       margin: 0 3px;
     }
     &.old-price {
@@ -1011,13 +1014,13 @@
   width: 100%;
   height: 630px;
   transition: linear 0.2s;
-  @include bp(xxl){
+  @include bp(xxl) {
     height: calc(35vw - 15px + 140px);
   }
-  @include bp(md){
+  @include bp(md) {
     height: calc(69vw - 15px + 140px);
   }
-  @include bp(xs){
+  @include bp(xs) {
     height: calc(74vw - 15px + 80px);
   }
   picture {
