@@ -1,6 +1,9 @@
 .footer{
   position: relative;
   padding: 50px 0 65px;
+  @include bp(xs){
+    padding-bottom: 35px;
+  }
   &:before{
     position: absolute;
     content: '';
@@ -36,8 +39,12 @@
 
 .footer-menu{
   display: flex;
+  letter-spacing: 0.03em;
   @include bp(xxxl){
     width: 100%;
+  }
+  @include bp(xs){
+    flex-wrap: wrap;
   }
   >li{
     width: 360px;
@@ -49,6 +56,10 @@
     @include bp(lg){
       min-width: 25%;
     }
+    @include bp(xs){
+      width: 50%;
+      margin-bottom: 24px;
+    }
     &:first-child{
       width: 240px;
       @include bp(xxxl){
@@ -57,6 +68,45 @@
       @include bp(lg){
         width: 25%;
       }
+      @include bp(xs){
+        order: 1;
+        width: 50%;
+      }
+    }
+    &:nth-child(2){
+      @include bp(xs){
+        order: 3;
+      }
+    }
+    &:nth-child(3){
+      @include bp(xs){
+        order: 2;
+      }
+    }
+    &:last-child{
+      display: none;
+      @include bp(xs){
+        display: block;
+        order: 4;
+      }
+      .footer-socials{
+        @include bp(xs){
+          display: flex;
+          margin-top: 0;
+        }
+        li{
+          @include bp(xs){
+            margin-bottom: 0;
+            margin-right: 18px;
+          }
+          svg{
+            @include bp(xs){
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
     }
     span{
       display: block;
@@ -64,12 +114,24 @@
       font-size: 18px;
       line-height: 22px;
       margin-bottom: 25px;
+      @include bp(xs){
+        font-size: 13px;
+        line-height: 16px;
+        margin-bottom: 14px;
+      }
     }
     ul{
       font-size: 14px;
       line-height: 17px;
+      @include bp(xs){
+        font-size: 11px;
+        line-height: 13px;
+      }
       li{
         margin-bottom: 19px;
+        @include bp(xs){
+          margin-bottom: 9px;
+        }
         &:last-child{
           margin-bottom: 0;
         }
@@ -88,6 +150,7 @@
 
 .footer-right{
   min-width: 450px;
+  letter-spacing: 0.03em;
   @include bp(lg){
     min-width: 350px;
   }
@@ -97,18 +160,35 @@
     max-width: 100%;
     margin-top: 40px;
   }
+  @include bp(xs){
+    margin-top: 7px;
+  }
   >span{
     display: block;
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
     margin-bottom: 25px;
+    @include bp(xs){
+      font-size: 13px;
+      line-height: 16px;
+      margin-bottom: 14px;
+    }
   }
 }
 
 .footer-subscribe{
   margin-top: -10px;
   margin-bottom: 58px;
+  @include bp(xs){
+    margin-top: -5px;
+    margin-bottom: 0;
+  }
+  +span{
+    @include bp(xs){
+      display: none;
+    }
+  }
   .input-wrapper{
     position: relative;
     &:after{
@@ -130,6 +210,12 @@
       font-size: 16px;
       line-height: 20px;
       color: $black;
+      letter-spacing: 0.03em;
+      @include bp(xs){
+        font-size: 13px;
+        line-height: 16px;
+        padding: 5px 25px 5px 0;
+      }
       &::placeholder{
         color: $gray;
       }
@@ -152,10 +238,22 @@
       align-items: center;
       width: 30px;
       height: 30px;
+      @include bp(xs){
+        justify-content: flex-end;
+        width: 20px;
+        height: 26px;
+        overflow: hidden;
+      }
+      svg{
+        min-width: 31px;
+      }
     }
   }
   .checkbox-wrapper{
     margin-top: 20px;
+    @include bp(xs){
+      margin-top: 15px;
+    }
     input{
       display: none;
       +label{
@@ -167,6 +265,12 @@
         line-height: 17px;
         display: block;
         padding-left: 35px;
+        letter-spacing: 0.03em;
+        @include bp(xs){
+          padding-left: 19px;
+          font-size: 11px;
+          line-height: 13px;
+        }
         &:before{
           position: absolute;
           content: '';
@@ -176,6 +280,11 @@
           border: 1px solid $black;
           left: 0;
           top: -1px;
+          @include bp(xs){
+            width: 13px;
+            height: 13px;
+            top: 0;
+          }
         }
         &:after{
           display: none;
@@ -206,6 +315,9 @@
   margin-top: 30px;
   display: flex;
   align-items: center;
+  @include bp(xs){
+    display: none;
+  }
   li{
     margin-right: 19px;
     a{
@@ -216,6 +328,52 @@
             fill: $gray;
           }
         }
+      }
+    }
+  }
+}
+
+.footer-copyright{
+  background-color: $black;
+  padding: 16px 0;
+  color: #fff;
+  margin-top: 65px;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  @include bp(sm){
+    padding: 12px 0;
+  }
+  @include bp(xs){
+    margin-top: 35px;
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .container{
+    display: flex;
+    justify-content: center;
+    @include bp(sm){
+      flex-direction: column;
+    }
+    span{
+      padding: 0 50px;
+      @include bp(sm){
+        padding: 0;
+      }
+      +span{
+        @include bp(sm){
+          margin-top: 9px;
+        }
+      }
+    }
+    a{
+      color: #fff;
+      text-decoration: none;
+      &:hover{
+        text-decoration: none;
+        color: #fff;
+        opacity: .5;
       }
     }
   }
