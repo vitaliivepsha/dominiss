@@ -9,6 +9,85 @@
   }
 }
 
+.header.simple {
+  & .header-top ul,
+  & .header-top li {
+    display: flex;
+    align-items: center;
+  }
+  & li {
+    margin-right: 60px;
+    &:last-child {
+      margin-right: 0;
+    }
+    & a {
+      padding: 0;
+    }
+  }
+}
+
+.header-support {
+  & span:first-child {
+    margin-right: 14px;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.03em;
+    color: $black;
+  }
+  & span:last-child {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.03em;
+    color: $black;
+  }
+}
+
+.header-schedule {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.03em;
+  color: $black;
+
+  & svg {
+    margin-left: 7px;
+    margin-right: 0 !important;
+  }
+}
+
+.mobile-header.simple {
+  & ul,
+  & li {
+    margin-right: 0;
+  }
+
+  .header-support {
+    padding: 0;
+    & span:first-child {
+      margin-right: 14px;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.03em;
+      color: $black;
+      @media (max-width: 575px) {
+        margin-right: 0;
+      }
+    }
+    & span:last-child {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.03em;
+      color: $black;
+    }
+    @media (max-width: 574px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
 .header-left {
   padding-left: 20px;
 }

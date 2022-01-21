@@ -20,6 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/policy.html');
     require('./assets/templates/layouts/search.html');
     require('./assets/templates/layouts/search-not-found.html');
+    require('./assets/templates/layouts/checkout.html');
 }
 
 // Depends
@@ -546,6 +547,15 @@ $('.header-search-options li').on('click', function () {
     $(this).parent().parent().css('display', 'none');
     $('.header-search-found').css('display', 'block')
 })
+
+// checkout promo
+
+$('.promo p').click(function () {
+    $(this).toggleClass('active').next().slideToggle();
+});
+
+
+
 
 
 
