@@ -21,6 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/search.html');
     require('./assets/templates/layouts/search-not-found.html');
     require('./assets/templates/layouts/checkout.html');
+    require('./assets/templates/layouts/checkout-b.html');
 }
 
 // Depends
@@ -554,9 +555,79 @@ $('.promo p').click(function () {
     $(this).toggleClass('active').next().slideToggle();
 });
 
+// checkout edit info
+
+$('.edit-btn').click(function () {
+    $(this).closest('.step-two').find('input').removeAttr('disabled');
+    $(this).closest('.step-two').find('input').focus();
+});
+
+// checkout select
+
+$('.form-select select').SumoSelect({
+    search: true,
+    searchText: 'Найти',
+    noMatch: 'Не найдено',
+    forceCustomRendering: true
+});
+
+$('.deliver-item-bot select').SumoSelect({
+    search: true,
+    searchText: 'Найти',
+    noMatch: 'Не найдено',
+    forceCustomRendering: true
+});
+
+$(".form-select-country select").change(function () {
+    var value = $(this).val(),
+        $ukraina = $(this).closest(".form").find(".form-select-city.ukraina"),
+        $russia = $(this).closest(".form").find(".form-select-city.russia"),
+        $germany = $(this).closest(".form").find(".form-select-city.germany");
+    if (value == "ukraina") {
+        $ukraina.show();
+        $(".form-select-city.ukraina select").closest(".form").find(".deliver-ua").removeClass("active");
+        $(this).closest(".form").find(".deliver-other").removeClass("active");
+    } else {
+        $ukraina.hide();
+    }
+    if (value == "russia") {
+        $russia.show();
+        $(".form-select-city.ukraina select").closest(".form").find(".deliver-ua").removeClass("active");
+        $(this).closest(".form").find(".deliver-other").removeClass("active");
+    } else {
+        $russia.hide();
+    }
+    if (value == "germany") {
+        $germany.show();
+        $(".form-select-city.ukraina select").closest(".form").find(".deliver-ua").removeClass("active");
+        $(this).closest(".form").find(".deliver-other").removeClass("active");
+    } else {
+        $germany.hide();
+    }
+});
+
+$(".form-select-city.ukraina select").on("change", function () {
+    $(this).closest(".form").find(".deliver-ua").addClass("active");
+    $(this).closest(".form").find(".deliver-other").removeClass("active");
+});
+
+$(".form-select-city.russia select").on("change", function () {
+    $(this).closest(".form").find(".deliver-other").addClass("active");
+    $(this).closest(".form").find(".deliver-ua").removeClass("active");
+});
+
+$(".form-select-city.germany select").on("change", function () {
+    $(this).closest(".form").find(".deliver-other").addClass("active");
+    $(this).closest(".form").find(".deliver-ua").removeClass("active");
+});
 
 
 
+$(".deliver-item-top").click(function () {
+    $(this).find('input').prop("checked", true);
+    $(this).addClass("active").next().slideDown();
+    $(".deliver-item-top").not(this).removeClass("active").next().slideUp();
+});
 
 
 
