@@ -212,16 +212,16 @@
                     <path d="M5 9.5L8.375 13L14 6" stroke="#211F1F" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   Ваши данные
-                  <b class="edit-btn">
+                  <a href="javascript:void(0)" class="edit-btn">
                     <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M15.8239 0.376622C15.5408 0.379334 15.2642 0.477421 15.0477 0.693784L7.56904 8.17202C7.41068 8.32253 7.3584 8.45708 7.27885 8.64452C7.19658 8.83827 7.1211 9.07119 7.05616 9.33969C6.92613 9.87683 6.84779 10.5374 6.96169 11.1958C6.98957 11.3718 7.13722 11.5223 7.3126 11.5535C7.97087 11.6674 8.63156 11.589 9.1687 11.459C9.43719 11.3939 9.67692 11.3118 9.87066 11.2295C10.0581 11.15 10.1926 11.1045 10.3432 10.9461C10.3483 10.9407 10.3516 10.938 10.3567 10.9327L17.8218 3.46798C18.3166 2.97319 18.2011 2.16666 17.707 1.6726C17.4191 1.38467 17.131 1.09657 16.8431 0.808674C16.5962 0.561728 16.27 0.40595 15.9454 0.376712C15.9049 0.373096 15.8644 0.37626 15.824 0.376712L15.8239 0.376622ZM15.8239 1.24055C15.8477 1.23919 15.8726 1.23738 15.8982 1.24055C16.0008 1.25335 16.1165 1.30368 16.2289 1.41608C16.52 1.70672 16.802 1.996 17.0928 2.28679C17.3178 2.51174 17.3029 2.7584 17.2077 2.85375L16.6271 3.43413L15.0748 1.88179L15.6553 1.3014C15.691 1.26569 15.7525 1.24475 15.8241 1.24068L15.8239 1.24055ZM14.4673 2.49593L16.013 4.04149L9.72931 10.3252C9.71952 10.3273 9.63981 10.3881 9.53359 10.4332C9.39196 10.4933 9.19217 10.5608 8.96663 10.6154C8.61451 10.7006 8.20064 10.7306 7.79896 10.7098C7.77907 10.3101 7.8086 9.8923 7.89342 9.54215C7.94797 9.3166 8.01562 9.12357 8.07574 8.98198C8.12079 8.87575 8.18226 8.79108 8.18377 8.77948L14.4673 2.49593ZM2.80403 3.40039C1.73456 3.40024 0.860107 4.27473 0.860107 5.34405V15.2789C0.860107 16.3484 1.7346 17.2227 2.80403 17.2227H12.7393C13.8087 17.2227 14.6832 16.3484 14.6832 15.2789V8.58366C14.6864 8.3554 14.4795 8.14553 14.2512 8.14553C14.023 8.14553 13.8161 8.35541 13.8193 8.58366V15.2789C13.8193 15.8846 13.3451 16.3587 12.7393 16.3587H2.80403C2.19834 16.3587 1.72403 15.8846 1.72403 15.2789V5.34405C1.72403 4.73836 2.19819 4.2642 2.80403 4.2642H10.3637C10.5919 4.26736 10.8018 4.0605 10.8018 3.83224C10.8018 3.60398 10.5919 3.39711 10.3637 3.40028L2.80403 3.40039Z"
                         fill="#565656" />
                     </svg>
                     Изменить
-                  </b>
+                  </a>
                 </p>
-                <input disabled type="text" value="Иванов Иван Иванович, 12589456s@gmail.com, +380632222222">
+                <span class="checkout-form-data">Иванов Иван Иванович, 12589456s@gmail.com, +380632222222</span>
               </div>
               <div class="checkout__form step-two-form">
                 <p class="checkout-form-title">
@@ -291,7 +291,11 @@
                         <input id="n-сourier" name="deliver" type="radio">
                         <label for="n-сourier">«Новая почта» — курьер</label>
                       </div>
-                      <div class="deliver-item-bot">таки придется самому пройтись :)</div>
+                      <div class="deliver-item-bot city">
+                        <div class="delivery-address">
+                          <input type="text" placeholder="Адресс">
+                        </div>
+                      </div>
                     </div>
                     <div class="deliver-item">
                       <div class="deliver-item-top">
@@ -367,28 +371,39 @@
                     </div>
                   </div>
 
-
-
-
-
                   <div class="checkout-deliver deliver-other">
+                    <div class="deliver-other__items">
+                      <div class="deliver-other-item">
+                        <input id="emc" name="deliver-other" type="radio">
+                        <label for="emc">EMC</label>
+                      </div>
+                      <div class="deliver-other-item">
+                        <input id="dhl" name="deliver-other" type="radio">
+                        <label for="dhl">DHL</label>
+                      </div>
+                      <div class="deliver-other-item">
+                        <input id="fedex" name="deliver-other" type="radio">
+                        <label for="fedex">FedEx</label>
+                      </div>
+                      <div class="deliver-other-item">
+                        <input id="new-post" name="deliver-other" type="radio" checked>
+                        <label for="new-post">Новая почта</label>
+                      </div>
+                      <div class="deliver-other-item">
+                        <input id="tnt" name="deliver-other" type="radio">
+                        <label for="tnt-post">TNT</label>
+                      </div>
+                    </div>
+                    <div class="deliver-other__address">
+                      <div class="delivery-address">
+                        <input type="text" placeholder="Улица">
+                        <input type="text" placeholder="Дом">
+                        <input type="text" placeholder="Квартира">
+                        <input type="text" placeholder="Почтовый индекс">
+                      </div>
+                    </div>
+
                   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                   <button type="submit" class="button next-step">Далее</button>

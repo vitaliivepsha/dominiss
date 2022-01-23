@@ -555,13 +555,6 @@ $('.promo p').click(function () {
     $(this).toggleClass('active').next().slideToggle();
 });
 
-// checkout edit info
-
-$('.edit-btn').click(function () {
-    $(this).closest('.step-two').find('input').removeAttr('disabled');
-    $(this).closest('.step-two').find('input').focus();
-});
-
 // checkout select
 
 $('.form-select select').SumoSelect({
