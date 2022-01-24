@@ -37,7 +37,6 @@
       flex-direction: column;
       justify-content: space-between;
       width: 100%;
-      padding: 25px 0;
       padding-bottom: 40px;
       border-top: 1px solid $border;
       @media (max-width: 767px) {
@@ -215,9 +214,10 @@
       border: 1px solid #000;
     }
   }
-  &.step-two {
+  &.step {
     max-width: 100%;
     padding-left: 0;
+    padding-top: 30px;
     & .checkout-form-title {
       display: flex;
       align-items: center;
@@ -260,14 +260,14 @@
       font-size: 14px;
       line-height: 17px;
       letter-spacing: 0.03em;
-      color: $black;
+      color: $gray;
       @media (max-width: 575px) {
         padding-left: 0;
         padding-bottom: 30px;
       }
     }
   }
-  &.step-two-form {
+  &.step-form {
     margin-bottom: auto;
     padding-top: 25px;
     max-width: 100%;
@@ -932,18 +932,87 @@
   }
 }
 
+// способы оплаты
+.checkout-payment {
+  margin-bottom: 40px;
+  @media (max-width: 575px) {
+    margin-bottom: 20px;
+  }
+
+  &-item {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  & input {
+    display: none;
+    & + label {
+      position: relative;
+      padding-left: 28px;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.03em;
+      font-weight: 400;
+      cursor: pointer;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 15px;
+        height: 15px;
+        border: 1px solid $gray;
+        border-radius: 50%;
+        border: 1px solid $black;
+      }
+    }
+    &:checked {
+      & + label {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          display: block;
+          width: 7px;
+          height: 7px;
+          background-color: $black;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  & span {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.03em;
+    color: $gray;
+    & svg {
+      margin-left: 8px;
+    }
+  }
+}
+
 .checkout-back {
   display: flex;
   align-items: center;
   font-size: 12px;
   line-height: 15px;
   letter-spacing: 0.03em;
-  color: $black;
+  color: $black !important;
   margin-top: 100px;
+  text-decoration: none !important;
   @media (max-width: 991px) {
     display: none;
   }
   &.bot {
+    text-decoration: none;
     display: none;
     @media (max-width: 991px) {
       display: block;
@@ -956,7 +1025,6 @@
   }
   &:hover {
     color: $accent;
-    text-decoration: none;
     > svg path {
       fill: $accent;
     }

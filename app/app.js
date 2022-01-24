@@ -22,6 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/search-not-found.html');
     require('./assets/templates/layouts/checkout.html');
     require('./assets/templates/layouts/checkout-b.html');
+    require('./assets/templates/layouts/checkout-c.html');
 }
 
 // Depends
