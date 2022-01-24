@@ -37,6 +37,7 @@
       flex-direction: column;
       justify-content: space-between;
       width: 100%;
+      padding-top: 25px;
       padding-bottom: 40px;
       border-top: 1px solid $border;
       @media (max-width: 767px) {
@@ -125,6 +126,10 @@
   & .input-wrapper {
     height: 49px;
     margin-bottom: 20px;
+    padding-left: 30px;
+    @media (max-width: 991px) {
+      padding-left: 0;
+    }
     @media (max-width: 767px) {
       margin-bottom: 0;
     }
@@ -187,7 +192,9 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    max-width: 300px;
     height: 40px;
+    margin-left: 30px;
     font-size: 16px;
     line-height: 20px;
     text-align: center;
@@ -198,10 +205,16 @@
     color: #fff;
     border: 1px solid #000;
     border-radius: 0;
+
+    @media (max-width: 991px) {
+      max-width: 100%;
+      margin-left: 0;
+    }
     &.next-step {
-      width: 330px;
+      max-width: 330px;
+      margin-left: 0;
       @media (max-width: 767px) {
-        width: 100%;
+        max-width: 100%;
       }
     }
     @media (max-width: 991px) {
