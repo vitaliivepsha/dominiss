@@ -23,6 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/checkout.html');
     require('./assets/templates/layouts/checkout-b.html');
     require('./assets/templates/layouts/checkout-c.html');
+    require('./assets/templates/layouts/success.html');
 }
 
 // Depends
