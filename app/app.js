@@ -24,6 +24,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/checkout-b.html');
     require('./assets/templates/layouts/checkout-c.html');
     require('./assets/templates/layouts/success.html');
+    require('./assets/templates/layouts/favorites.html');
 }
 
 // Depends
@@ -616,13 +617,51 @@ $(".form-select-city.germany select").on("change", function () {
     $(this).closest(".form").find(".deliver-ua").removeClass("active");
 });
 
-
-
 $(".deliver-item-top").click(function () {
     $(this).find('input').prop("checked", true);
     $(this).addClass("active").next().slideDown();
     $(".deliver-item-top").not(this).removeClass("active").next().slideUp();
 });
+
+// favorites
+
+$('.favorites-item__close').on('click', function () {
+    $(this).closest('.col').css('display', 'none');
+})
+
+$('.favorites-item__size select').SumoSelect({
+    forceCustomRendering: true
+});
+
+$('.favorites-to-cart').on('click', function () {
+    var s = $(this).find('span');
+    console.log(s);
+    s.html() == 'Добавить в корзину' ? s.html('В корзине') : s.html('Добавить в корзину');
+    $(this).toggleClass('in-cart');
+})
+
+// share-popup
+
+$('.favorites-share').on('click', function () {
+    $(this).next().toggleClass('open');
+})
+
+$('.favorites-share-popup .close').on('click', function () {
+    $(this).parent().removeClass('open');
+})
+
+$(document).keydown(function (e) {
+    if (e.keyCode == 27) {
+        $('.favorites-share-popup').removeClass('open');
+    }
+});
+
+
+
+
+
+
+
 
 
 
