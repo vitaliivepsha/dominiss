@@ -656,6 +656,31 @@ $(document).keydown(function (e) {
     }
 });
 
+// copy text
+
+$('.favorites-share-popup-btn').on('click', function () {
+    var copyText = $(this).parent().find('.favorites-share-popup-link').text();
+    console.log(copyText);
+    var copytext2 = document.createElement('input');
+    copytext2.value = copyText;
+    document.body.appendChild(copytext2);
+    copytext2.select();
+    document.execCommand("copy");
+    document.body.removeChild(copytext2);
+})
+
+$('.favorites-share-popup-link svg').on('click', function () {
+    var copyText = $(this).parent().text();
+    console.log(copyText);
+    var copytext2 = document.createElement('input');
+    copytext2.value = copyText;
+    document.body.appendChild(copytext2);
+    copytext2.select();
+    document.execCommand("copy");
+    document.body.removeChild(copytext2);
+
+})
+
 
 
 

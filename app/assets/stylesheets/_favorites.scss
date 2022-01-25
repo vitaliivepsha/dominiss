@@ -112,6 +112,16 @@
   line-height: 17px;
   letter-spacing: 0.03em;
   color: $dark-gray;
+  & svg {
+    cursor: pointer;
+  }
+}
+
+.dd {
+  display: none;
+  &.open {
+    display: block;
+  }
 }
 
 .favorites-share-popup-btn {
@@ -129,6 +139,7 @@
   background-color: $black;
   color: #ffffff;
   transition: 0.3s;
+  cursor: pointer;
   &:hover {
     background-color: #ffffff;
     color: $black;
