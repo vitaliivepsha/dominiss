@@ -678,7 +678,6 @@ $('.favorites-share-popup-link svg').on('click', function () {
     copytext2.select();
     document.execCommand("copy");
     document.body.removeChild(copytext2);
-
 })
 
 
