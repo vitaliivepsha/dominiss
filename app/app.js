@@ -707,11 +707,6 @@ $('.favorites-share-popup-link svg').on('click', function () {
 
 
 
-
-
-
-
-
 // menu
 
 $('.mobile-menu__list .has-children.lvl1 > span').click(function () {
