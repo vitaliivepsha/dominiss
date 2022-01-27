@@ -316,6 +316,9 @@ main {
 // Checkout
 @import "checkout";
 
+// Success order
+@import "success";
+
 // 404
 @import "404";
 
@@ -331,6 +334,9 @@ main {
 // Policy
 @import "policy";
 
+// Favorites
+@import "favorites";
+
 // Breadcrumbs
 @import "breadcrumbs";
 
@@ -342,3 +348,6 @@ main {
 
 // Text
 @import "text";
+
+// Search
+@import "search";

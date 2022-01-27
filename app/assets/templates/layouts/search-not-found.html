@@ -17,34 +17,37 @@
 <body>
 
   ${require('../parts/header.html')}
-
   <main class="main">
-    <div class="section not-found">
+    <div class="section catalog-section search">
       <div class="page-title">aliquet scelerisque</div>
       <div class="container">
         <div class="breadcrumbs">
           <a href="javascript:void(0)">Главная</a>
-          <span>Страница не найдена</span>
+          <span>Результаты поиска</span>
         </div>
       </div>
-      <div class="not-found">
+
+      <div class="catalog-title__wrapper">
         <div class="container">
-          <div class="not-found__wrapper">
-            <h1 class="not-found__title">404</h1>
-            <p class="not-found__sub-title">страница не найдена</p>
-            <p class="not-found__text">Мы сожалеем, но страница, на которую Вы пытались перейти, не существует.</p>
-            <p class="not-found__text">Пожалуйста, вернитесь на предыдущую страницу или на Главную.</p>
-            <div class="not-found__btn-wrapper">
-              <a href="javascript:void(0)">Назад</a>
-              <a href="javascript:void(0)">На главную</a>
-            </div>
-
-          </div>
+          <span class="catalog-title search">Результаты поиска «кружево»</span>
+          <p class="catalog-descr">Найдено 0 товаров</p>
         </div>
       </div>
-
-
-    </div>
+      <div class="search-inner">
+        <b>К сожалению, по вашему запросу ничего не найдено</b>
+        <p>Проверьте, пожалуйста, все ли написано верно, или попробуйте<br> найти необходимое в наших категориях:</p>
+        <div class="search-links">
+          <a href="javascript:void(0)">
+            Свадебные платья
+          </a>
+          <a href="javascript:void(0)">
+            Вечерние платья
+          </a>
+          <a href="javascript:void(0)">
+            Аксессуары
+          </a>
+        </div>
+      </div>
 
   </main>
   ${require('../parts/footer.html')}
