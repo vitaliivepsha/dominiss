@@ -43,6 +43,7 @@ var Fancybox = require('_modules/fancybox');
 require('../node_modules/sumoselect/jquery.sumoselect.min');
 require('../node_modules/ion-rangeslider/js/ion.rangeSlider');
 import PerfectScrollbar from 'perfect-scrollbar';
+import { has } from 'underscore';
 
 // Stylesheet entrypoint
 require('_stylesheets/app.scss');
@@ -504,6 +505,7 @@ $(document).on('click', function (e) {
     var container1 = $('.header-cart');
     if (container1.has(e.target).length === 0) {
         container1.removeClass('active');
+        $('body').removeClass('header-cart-open');
     }
 });
 
@@ -529,6 +531,26 @@ $(document).on('click', function (e) {
     var container1 = $('.header-cart');
     if (container1.has(e.target).length === 0) {
         container1.removeClass('active');
+    }
+});
+
+// favorite
+
+$('.header-fav.empty .header-fav__icon').on('click', function () {
+    $(this).parent().toggleClass('active');
+    $('body').addClass('header-fav-open');
+});
+
+$('.header-fav__inner > button').on('click', function () {
+    $(this).closest('.header-fav').toggleClass('active');
+    $('body').removeClass('header-fav-open');
+});
+
+$(document).on('click', function (e) {
+    var container1 = $('.header-fav');
+    if (container1.has(e.target).length === 0) {
+        container1.removeClass('active');
+        $('body').removeClass('header-fav-open');
     }
 });
 
@@ -656,6 +678,9 @@ $(document).keydown(function (e) {
     }
 });
 
+
+
+
 // copy text
 
 $('.favorites-share-popup-btn').on('click', function () {
@@ -667,6 +692,7 @@ $('.favorites-share-popup-btn').on('click', function () {
     copytext2.select();
     document.execCommand("copy");
     document.body.removeChild(copytext2);
+    $(this).html('Скопировано');
 })
 
 $('.favorites-share-popup-link svg').on('click', function () {
@@ -678,6 +704,8 @@ $('.favorites-share-popup-link svg').on('click', function () {
     copytext2.select();
     document.execCommand("copy");
     document.body.removeChild(copytext2);
+    $('.favorites-share-popup-btn').html('Скопировано');
+
 })
 
 
