@@ -678,9 +678,6 @@ $(document).keydown(function (e) {
     }
 });
 
-
-
-
 // copy text
 
 $('.favorites-share-popup-btn').on('click', function () {
@@ -706,6 +703,37 @@ $('.favorites-share-popup-link svg').on('click', function () {
     document.body.removeChild(copytext2);
     $('.favorites-share-popup-btn').html('Скопировано');
 
+})
+
+
+
+
+
+
+
+
+// menu
+
+$('.mobile-menu__list .has-children.lvl1 > span').click(function () {
+    $('body').addClass('mm-lvl2');
+    $(this).next('.mobile-menu__lvl2').addClass('show');
+});
+
+$('.mobile-menu__list .menu-back.lvl2').click(function () {
+    $('body').removeClass('mm-lvl2');
+    $('.mobile-menu__lvl2').removeClass('show');
+});
+
+$('.mobile-menu__lvl2 > ul > li span').next().hide();
+$('.mobile-menu__lvl2 > ul > li span').on('click', function () {
+    $(this).toggleClass('active');
+    $(this).next().slideToggle();
+})
+
+$('.mobile-menu__bot > ul > li span').next().hide();
+$('.mobile-menu__bot > ul > li span').on('click', function () {
+    $(this).toggleClass('active');
+    $(this).next().slideToggle();
 })
 
 
