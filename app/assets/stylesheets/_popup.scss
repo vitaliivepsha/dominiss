@@ -1,5 +1,5 @@
 .mfp-bg {
-  background: rgba(17, 17, 17, 0.5);
+  background: rgba($black, 0.4);
 }
 
 .popup {
@@ -10,7 +10,62 @@
   background: #fff;
   padding: 60px 54px 54px;
   max-height: 100vh;
-  overflow: auto;
+  letter-spacing: 0.03em;
+  &.fitting-popup{
+    width: 450px;
+    padding: 50px 60px 40px;
+    .popup-title{
+      margin-bottom: 10px;
+    }
+    .popup-descr{
+      margin-bottom: 18px;
+    }
+    .input-wrapper{
+      margin-bottom: 18px;
+    }
+    .input{
+      padding: 12px 0;
+      border-color: $border;
+      font-size: 14px;
+      line-height: 17px;
+      color: $black;
+      &::placeholder{
+        color: $dark-gray;
+      }
+      &:focus{
+        &::placeholder{
+          color: transparent;
+        }
+      }
+    }
+    .btn{
+      margin: 40px auto 0;
+      width: 266px;
+      height: 40px;
+      background: $black;
+      font-size: 16px;
+      line-height: 20px;
+      color: #fff;
+      border: 1px solid $black;
+      text-decoration: none;
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: none;
+      border-radius: 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      transition: linear .2s;
+      &:hover{
+        background-color: transparent;
+        color: $black;
+      }
+    }
+  }
   .mfp-close {
     width: 24px;
     height: 24px;
@@ -35,6 +90,145 @@
     &:hover {
       svg {
         path {
+        }
+      }
+    }
+  }
+}
+
+.popup-title{
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $black;
+}
+
+.popup-descr{
+  text-align: center;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.03em;
+  color: $black;
+}
+
+.SumoSelect{
+  display: flex;
+  width: 100%;
+  letter-spacing: 0.03em;
+  &:hover, &:focus, &.open{
+    >.CaptionCont{
+      box-shadow: none;
+      border-color: $border;
+    }
+  }
+  &.open{
+    .search-txt{
+      font-size: 14px;
+      line-height: 17px;
+      padding: 12px 30px 12px 0;
+    }
+    >.optWrapper{
+      top: calc(100% - 1px);
+    }
+    >.search{
+      >label{
+        visibility: visible;
+        i{
+          &:before{
+            transform: scale(1, -1) rotate(-45deg);
+            margin-bottom: -5px;
+          }
+        }
+      }
+    }
+  }
+  >.CaptionCont{
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid $border;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 12px 0;
+    border-radius: 0;
+    > span{
+      color: $black;
+      cursor: pointer;
+      &.placeholder{
+        font-style: normal;
+        color: $dark-gray;
+      }
+    }
+    >label{
+      margin-bottom: 0;
+      z-index: 1;
+      >i{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background: none;
+        &:before{
+          content: '';
+          width: 8px;
+          height: 8px;
+          border: 1px solid $gray;
+          border-right: none;
+          border-top: none;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+  >.optWrapper{
+    top: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    border-color: rgba($gray, .2);
+    &.isFloating{
+      top: calc(100% - 1px);
+      z-index: 9;
+      position: absolute;
+      width: 100%;
+      bottom: auto;
+      max-height: unset;
+    }
+    >.options{
+      max-height: 225px;
+      &::-webkit-scrollbar {
+        overflow-y: scroll;
+        background: transparent;
+        width: 3px;
+        transition: linear .2s;
+        box-shadow: 1px 0 0 #c4c4c4;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $gray;
+        border-radius: 0;
+        width: 3px;
+        transition: linear .2s;
+        cursor: grab;
+      }
+      li{
+        &.opt{
+          border: none;
+          font-size: 14px;
+          line-height: 17px;
+          color: $gray;
+          padding: 5px 10px;
+          &.disabled{
+            display: none;
+          }
+          &:hover{
+            background: rgba(229, 229, 229, 0.5);
+          }
+        }
+        label{
+          font-weight: 400;
+          margin-bottom: 0;
         }
       }
     }
