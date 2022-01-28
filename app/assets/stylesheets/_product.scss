@@ -14,11 +14,21 @@
   flex-wrap: wrap;
   width: 910px;
   margin: 0 -5px;
+  @include bp(xxl){
+    width: 66.66666%;
+  }
   >.col{
     width: 50%;
     height: 675px;
     margin-bottom: 10px;
     padding: 0 5px;
+    @include bp(xxxl){
+      height: 44vw;
+    }
+
+    @include bp(xxl){
+
+    }
   }
 }
 
@@ -85,12 +95,20 @@
   top: 0;
   padding-top: 15px;
   margin-top: -15px;
+  @include bp(xxl){
+    width: 33.33333%;
+  }
 }
 
 .product-sidebar__nav{
   display: flex;
   justify-content: space-between;
   margin-bottom: 48px;
+  @include bp(xxl){
+    width: calc(100% - 30px);
+    margin-left: auto;
+    margin-right: auto;
+  }
   >a{
     display: flex;
     align-items: center;
@@ -553,6 +571,10 @@
     cursor: pointer;
     transition: linear .2s;
     text-decoration: none;
+    @include bp(xxl){
+      padding: 0 10px;
+      justify-content: center;
+    }
     &:focus{
       text-decoration: none;
       outline: none;
@@ -571,6 +593,12 @@
     }
     svg{
       margin-right: 20px;
+    }
+    span{
+      @include bp(xxl){
+        width: 170px;
+        text-align: left;
+      }
     }
     &.btn-filled{
       background-color: $black;
@@ -1103,7 +1131,7 @@
 
 .product-reviews__section{
   min-height: 300px;
-  padding: 33px 0;
+  padding: 33px 0 80px;
   background: $bg-gray;
   margin-bottom: -1px;
   position: relative;
@@ -1136,7 +1164,7 @@
   max-width: 100%;
   height: 50px;
   border: 1px solid $black;
-  margin: 0 auto;
+  margin: 0 auto 50px;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.03em;
@@ -1147,6 +1175,273 @@
   }
 }
 
-.product-sizes__fitting-title{
+.product-reviews__form-wrapper{
+  padding-top: 20px;
+  display: none;
+}
 
+.product-reviews__form-title{
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  margin-bottom: 26px;
+}
+
+.product-reviews__form{
+  width: 750px;
+  max-width: 100%;
+  .input-wrapper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    .input{
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.03em;
+      padding: 12px 0;
+      border-color: rgba($gray, .3);
+      &::placeholder{
+        color: $dark-gray;
+      }
+      &:focus{
+        &::placeholder{
+          color: transparent;
+        }
+      }
+    }
+  }
+  .product-reviews__form-row{
+    display: flex;
+    .input-wrapper{
+      width: 50%;
+      padding-right: 45px;
+    }
+  }
+  .checkbox-wrapper{
+    margin-top: -13px;
+    input{
+      display: none;
+      &:checked{
+        +label{
+          &:after{
+            display: block;
+          }
+        }
+      }
+      +label{
+        position: relative;
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 400;
+        color: $dark-gray;
+        letter-spacing: 0.03em;
+        margin-bottom: 0;
+        padding-left: 23px;
+        cursor: pointer;
+        &:before {
+          position: absolute;
+          content: "";
+          left: 0;
+          top: 3px;
+          width: 10px;
+          height: 10px;
+          border: 1px solid rgba($black, 0.5);
+        }
+        &:after {
+          display: none;
+          position: absolute;
+          content: "";
+          left: 3px;
+          top: 6px;
+          width: 4px;
+          height: 4px;
+          background-color: $black;
+        }
+      }
+    }
+  }
+  .btn{
+    margin-top: 55px;
+    width: 266px;
+    height: 40px;
+    background: $black;
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+    border: 1px solid $black;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: linear .2s;
+    &:hover{
+      background-color: transparent;
+      color: $black;
+    }
+  }
+}
+
+.rating-wrapper{
+  display: flex;
+  align-items: center;
+  >span{
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.03em;
+    color: $dark-gray;
+    margin-right: 20px;
+  }
+}
+
+.rating > input ~ label {
+  cursor: pointer;
+}
+
+.rating > input {
+  display: none;
+}
+
+.rating > label svg {
+  display: block;
+}
+
+.rating > label {
+  float: right;
+  padding-right: 3px;
+  margin-bottom: 0;
+}
+
+.rating:not(:checked) > label:hover svg,
+.rating:not(:checked) > label:hover ~ label svg,
+.rating > input:checked + label:hover svg,
+.rating > input:checked ~ label svg,
+.rating > input:checked ~ label:hover svg,
+.rating > input:checked ~ label:hover ~ label svg,
+.rating > label:hover ~ input:checked ~ label svg {
+  fill: $dark-gray;
+}
+
+.rating > input:checked ~ label svg {
+  fill: $dark-gray;
+}
+
+.rating-stars{
+  display: flex;
+}
+
+.rating-star{
+  margin-right: 5px;
+  display: flex;
+  &.active{
+    svg {
+      fill: $dark-gray;
+    }
+  }
+}
+
+.add-photos{
+  display: flex;
+  align-items: center;
+  >span{
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.03em;
+    color: $dark-gray;
+    margin-right: 40px;
+  }
+}
+
+.add-photos__btn{
+  width: 136px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px dashed $black;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.03em
+}
+
+.product-sizes__fitting{
+  padding-top: 70px;
+}
+
+.product-sizes__fitting-title{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.product-sizes__fitting-btn{
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 35px;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+  &.active{
+    text-decoration: none;
+  }
+}
+
+.product-sizes__fitting-guide{
+  margin-bottom: 35px;
+  display: none;
+  >span{
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 30px;
+    letter-spacing: 0.03em;
+  }
+  .product-pic{
+    width: 440px;
+    height: 646px;
+    margin: 0 auto;
+  }
+}
+
+.product-sizes__fitting-block{
+  margin-bottom: 55px;
+  >div{
+    width: 240px;
+    height: 160px;
+    margin: 0 auto 20px;
+    picture{
+      width: 100%;
+      height: 100%;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  >span{
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+  }
 }

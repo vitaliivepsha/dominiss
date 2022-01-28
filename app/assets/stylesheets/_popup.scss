@@ -9,7 +9,7 @@
   max-width: calc(100vw - 30px);
   background: #fff;
   padding: 60px 54px 54px;
-  max-height: 100vh;
+  max-height: calc(100vh - 30px);
   letter-spacing: 0.03em;
   &.fitting-popup{
     width: 450px;
@@ -40,6 +40,37 @@
     }
     .btn{
       margin: 40px auto 0;
+      width: 266px;
+      height: 40px;
+      background: $black;
+      font-size: 16px;
+      line-height: 20px;
+      color: #fff;
+      border: 1px solid $black;
+      text-decoration: none;
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: none;
+      border-radius: 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      transition: linear .2s;
+      &:hover{
+        background-color: transparent;
+        color: $black;
+      }
+    }
+  }
+  &.upload-popup{
+    width: 775px;
+    height: 400px;
+    .btn{
+      margin: 0 auto;
       width: 266px;
       height: 40px;
       background: $black;
@@ -523,4 +554,49 @@
 }
 .my-mfp-zoom-in.mfp-removing.mfp-bg {
   opacity: 0;
+}
+
+.dropzone{
+  background: #F8F8F8;
+  border: 1px dashed #A0A0A0;
+  border-radius: 0;
+  position: relative;
+  min-height: 180px;
+  height: 100%;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    overflow-y: scroll;
+    background: transparent;
+    width: 3px;
+    transition: linear .2s;
+    box-shadow: 1px 0 0 #c4c4c4;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $gray;
+    border-radius: 0;
+    width: 3px;
+    transition: linear .2s;
+    cursor: grab;
+  }
+  .files-upload__zone{
+    pointer-events: none;
+  }
+  &.dz-started{
+    .files-upload__zone{
+      display: none;
+    }
+    .dz-message{
+      display: none;
+    }
+  }
+  .dz-message{
+    display: none;
+  }
+  .dz-preview{
+    .dz-image{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
