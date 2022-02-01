@@ -9,11 +9,14 @@
   max-width: calc(100vw - 30px);
   background: #fff;
   padding: 60px 54px 54px;
-  max-height: calc(100vh - 30px);
+  max-height: calc(100vh - 18px);
   letter-spacing: 0.03em;
   &.fitting-popup{
     width: 450px;
     padding: 50px 60px 40px;
+    @include bp(xs){
+      padding: 30px 40px 45px;
+    }
     .popup-title{
       margin-bottom: 10px;
     }
@@ -22,6 +25,9 @@
     }
     .input-wrapper{
       margin-bottom: 18px;
+      @include bp(xs){
+        margin-bottom: 7px;
+      }
     }
     .input{
       padding: 12px 0;
@@ -29,12 +35,26 @@
       font-size: 14px;
       line-height: 17px;
       color: $black;
+      @include bp(xs){
+        padding: 8px 0;
+        font-size: 12px;
+        line-height: 15px;
+      }
       &::placeholder{
         color: $dark-gray;
       }
       &:focus{
         &::placeholder{
           color: transparent;
+        }
+      }
+    }
+    .SumoSelect{
+      > .CaptionCont{
+        @include bp(xs){
+          padding: 8px 0;
+          font-size: 12px;
+          line-height: 15px;
         }
       }
     }
@@ -60,6 +80,13 @@
       -moz-appearance: none;
       appearance: none;
       transition: linear .2s;
+      @include bp(xs) {
+        width: 100%;
+        margin-top: 25px;
+        height: 35px;
+        font-size: 13px;
+        line-height: 16px;
+      }
       &:hover{
         background-color: transparent;
         color: $black;
@@ -109,18 +136,20 @@
     opacity: 1;
     cursor: pointer;
     @include bp(xs) {
-      right: 15px;
-      top: 28px;
+      right: 3px;
+      top: 7px;
     }
     svg {
       pointer-events: none;
       path {
         transition: linear 0.2s;
+        fill: $dark-gray;
       }
     }
     &:hover {
       svg {
         path {
+          fill: $black;
         }
       }
     }
@@ -136,6 +165,10 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: $black;
+  @include bp(xs){
+    font-size: 12px;
+    line-height: 15px;
+  }
 }
 
 .popup-descr{
@@ -144,6 +177,10 @@
   line-height: 17px;
   letter-spacing: 0.03em;
   color: $black;
+  @include bp(xs) {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }
 
 .SumoSelect{

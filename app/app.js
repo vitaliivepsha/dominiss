@@ -298,11 +298,13 @@ $(function () {
 
     // product video
 
-    $('.product-video').on('click', function () {
-        $(this).removeClass('product-video');
-        $(this).find('.product-video__play').hide();
-        $(this).find('picture').hide().closest('.product-pic').find('.prod-video').show().play();
-    });
+    if($('.product-video').length){
+        $('.product-video').on('click', function () {
+            $(this).removeClass('product-video');
+            $(this).find('.product-video__play').hide();
+            $(this).find('picture').hide().closest('.product-pic').find('.prod-video').show().play();
+        });
+    }
 
     $('.prod-video').click(function () {
         $(this).closest('.product-pic').find('.product-video__play').toggleClass('show');

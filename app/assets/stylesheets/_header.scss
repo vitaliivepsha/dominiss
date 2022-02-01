@@ -861,6 +861,7 @@ body.header-fav-open {
   width: 100%;
   position: absolute;
   bottom: 0;
+  z-index: 5;
   @include bp(xxl) {
     padding: 0 270px;
   }
