@@ -482,6 +482,16 @@ $(function () {
         const myDropzone = new Dropzone('#upload-photos-area');
     }
 
+    // thank you page show/hide blocks
+
+    $('.services-title').on('click', function () {
+        $(this).toggleClass('active').next('.services-list').toggleClass('active');
+    });
+
+    $('.special-text__title').on('click', function () {
+        $(this).toggleClass('active').closest('.special-item').toggleClass('active');
+    });
+
     // lazy load
     var lazyload = function () {
         var scroll = $(window).scrollTop() + $(window).height() * 3;
