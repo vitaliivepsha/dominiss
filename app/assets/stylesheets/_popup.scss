@@ -2,6 +2,12 @@
   background: rgba($black, 0.4);
 }
 
+.mfp-container{
+  @include bp(xs) {
+    padding: 0;
+  }
+}
+
 .popup {
   position: relative;
   margin: 0 auto;
@@ -121,6 +127,26 @@
       &:hover{
         background-color: transparent;
         color: $black;
+      }
+    }
+  }
+  &.sizes-popup{
+    padding: 65px 30px 35px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    max-width: 100vw;
+    .product-sizes__table-btn{
+      position: absolute;
+      left: 30px;
+      top: 25px;
+    }
+    .mfp-close {
+      @include bp(xs) {
+        right: 19px;
+        top: 18px;
       }
     }
   }
@@ -636,4 +662,97 @@
       align-items: center;
     }
   }
+}
+
+.sizes-popup__price{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+
+.sizes-popup__current-size{
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  line-height: 17px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $border;
+  margin-bottom: 13px;
+}
+
+.sizes-popup__parameters{
+  font-size: 14px;
+  line-height: 17px;
+  color: $dark-gray;
+  padding-bottom: 17px;
+  border-bottom: 1px solid $border;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+  li{
+    display: flex;
+    margin-bottom: 7px;
+    width: 160px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    span{
+      width: 114px;
+    }
+  }
+}
+
+.sizes-popup__choose-wrapper{
+  padding-bottom: 14px;
+  border-bottom: 1px solid $border;
+  margin-bottom: 18px;
+}
+
+.sizes-popup__choose{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 240px;
+}
+
+.sizes-popup__choose-item{
+  border: 1px solid transparent;
+  width: 52px;
+  min-width: max-content;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin: 0 4px 8px;
+  padding: 8px 4px;
+  &.checked{
+    border-color: $black;
+  }
+  p{
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 4px;
+  }
+  span{
+    display: block;
+    font-size: 10px;
+    line-height: 12px;
+    color: $gray;
+  }
+}
+
+.sizes-popup__btn{
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+  line-height: 16px;
+  color: #fff;
+  background-color: $black;
 }

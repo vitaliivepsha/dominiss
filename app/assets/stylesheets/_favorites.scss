@@ -480,6 +480,9 @@
           margin-top: 10px;
           background-size: 8px 8px;
         }
+        &:before{
+          display: none;
+        }
       }
     }
     &.open > .CaptionCont > label i {
@@ -543,11 +546,18 @@
   letter-spacing: 0.03em;
   color: $black !important;
   text-decoration: none !important;
-  @media (max-width: 575px) {
+  @include bp(xs){
     height: 50px;
     padding: 0 10px;
     font-size: 13px;
     line-height: 16px;
+    display: none;
+  }
+  &.popup-btn{
+    display: none;
+    @include bp(xs){
+      display: flex;
+    }
   }
   & svg {
     margin-right: 20px;

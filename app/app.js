@@ -437,10 +437,16 @@ $(function () {
 
     $('.product-sizes__table-btn').click(function () {
         $('.product-sizes__table-menu').addClass('active');
+        $('body').addClass('sizes-table__open');
+    });
+
+    $('.popup .product-sizes__table-btn').click(function () {
+        $('.product-sizes__table-menu').css('z-index', '1500');
     });
 
     $(document).click(function () {
-        $('.product-sizes__table-menu').removeClass('active');
+        $('.product-sizes__table-menu').removeClass('active').removeAttr('style');
+        $('body').removeClass('sizes-table__open');
     });
 
     $(document).on('click', '.product-sizes__table-menu', function (e) {
@@ -452,7 +458,13 @@ $(function () {
     });
 
     $('.product-sizes__close').click(function () {
+        $('.product-sizes__table-menu').css('z-index', '1500');
+    });
+
+    $('.fitting-popup__btn').click(function () {
         $('.product-sizes__table-menu').removeClass('active');
+        $('body').removeClass('sizes-table__open');
+        $('.product-sizes__table-menu').removeAttr('style');
     });
 
     $('.product-sizes__tabs-checked').click(function () {
@@ -470,6 +482,10 @@ $(function () {
     $('.product-sizes__fitting-btn').on('click', function () {
         $(this).toggleClass('active');
         $('.product-sizes__fitting-guide').slideToggle();
+    });
+
+    $('.sizes-popup__choose-item').on('click', function () {
+        $(this).addClass('checked').siblings().removeClass('checked');
     });
 
     // reviews
