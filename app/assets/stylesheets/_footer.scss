@@ -1,9 +1,7 @@
 .footer {
   position: relative;
   padding: 50px 0 65px;
-  @include bp(xs) {
-    padding-bottom: 35px;
-  }
+  padding-bottom: 0;
   &:before {
     position: absolute;
     content: "";
@@ -18,7 +16,8 @@
 
 .footer-wrapper {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
+  justify-content: space-evenly;
   @include bp(md) {
     display: block;
   }
@@ -26,7 +25,7 @@
 
 .footer-left {
   display: flex;
-  @include bp(xxxl) {
+  @include bp(xxl) {
     width: calc(100% - 450px);
   }
   @include bp(lg) {
@@ -40,20 +39,20 @@
 .footer-menu {
   display: flex;
   letter-spacing: 0.03em;
-  @include bp(xxxl) {
+  @include bp(xxl) {
     width: 100%;
   }
   @include bp(xs) {
     flex-wrap: wrap;
   }
   > li {
-    width: 360px;
-    min-width: 240px;
+    width: 240px;
     padding-right: 15px;
-    @include bp(xxxl) {
-      width: 33.33333%;
+    @include bp(xxl) {
+      min-width: 240px;
     }
     @include bp(lg) {
+      width: 33.33333%;
       min-width: 25%;
     }
     @include bp(xs) {
@@ -61,11 +60,12 @@
       margin-bottom: 24px;
     }
     &:first-child {
-      width: 240px;
-      @include bp(xxxl) {
-        width: 33.33333%;
+      // width: 240px;
+      width: 180px;
+      @include bp(xxl) {
       }
       @include bp(lg) {
+        width: 33.33333%;
         width: 25%;
       }
       @include bp(xs) {
@@ -244,8 +244,18 @@
         height: 26px;
         overflow: hidden;
       }
+      &:hover svg {
+        height: 12px;
+        min-width: 41px;
+        transition: all 0.2s;
+        path {
+          fill: #000;
+          transition: all 0.2s;
+        }
+      }
       svg {
         min-width: 31px;
+        transition: all 0.2s;
       }
     }
   }

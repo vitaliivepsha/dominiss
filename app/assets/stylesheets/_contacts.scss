@@ -38,11 +38,14 @@
         padding: 5px 12px;
         font-size: 14px;
         line-height: 130%;
-        color: $black;
+        color: $dark-gray;
         letter-spacing: 0.03em;
         text-decoration: none;
+        transition: color 0s;
         &:hover {
-          color: #000;
+          font-weight: 500;
+          transition: color 0s;
+          color: $black;
         }
         & i {
           display: flex;
@@ -54,7 +57,9 @@
       }
       &.current a {
         font-weight: 500;
+        color: $black;
         background-color: $bg-gray;
+        pointer-events: none;
       }
     }
   }

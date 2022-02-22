@@ -38,11 +38,14 @@
         padding: 5px 12px;
         font-size: 14px;
         line-height: 130%;
-        color: $black;
+        color: $dark-gray;
         letter-spacing: 0.03em;
         text-decoration: none;
+        transition: color 0s;
         &:hover {
-          color: #000;
+          font-weight: 500;
+          transition: color 0s;
+          color: $black;
         }
         & i {
           display: flex;
@@ -54,7 +57,9 @@
       }
       &.current a {
         font-weight: 500;
+        color: $black;
         background-color: $bg-gray;
+        pointer-events: none;
       }
     }
   }
@@ -107,7 +112,7 @@
       font-size: 14px;
       line-height: 17px;
       letter-spacing: 0.03em;
-      color: $dark-gray;
+      color: $black;
       &:last-child {
         margin-bottom: 0;
       }
@@ -154,12 +159,13 @@
           }
         }
         & p {
+          max-width: 290px;
           margin: 0;
           margin-bottom: 20px;
           font-size: 14px;
           line-height: 17px;
           letter-spacing: 0.03em;
-          color: $dark-gray;
+          color: $black;
           @media (max-width: 767px) {
             margin-bottom: 10px;
             font-size: 12px;
@@ -200,15 +206,23 @@
           }
           &.err {
             position: relative;
-            & input {
+            & input,
+            & textarea {
               border-bottom: 1px solid $accent;
+              &::placeholder:focus {
+                opacity: 0;
+              }
             }
             & .validate-error {
               position: absolute;
               right: 0;
-              top: 43px;
+              top: 12px;
+              bottom: auto;
+              width: 100% !important;
+              background: #f8f8f8;
+              pointer-events: none;
               @media (max-width: 575px) {
-                top: 28px;
+                top: 6px;
               }
 
               width: fit-content;
@@ -233,6 +247,35 @@
             border-bottom: 1px solid $border;
             background: none;
             color: $dark-gray;
+            &::-webkit-input-placeholder {
+              color: $dark-gray;
+            }
+            &::-moz-placeholder {
+              color: $dark-gray;
+            }
+            &:-moz-placeholder {
+              color: $dark-gray;
+            }
+            &:-ms-input-placeholder {
+              color: $dark-gray;
+            }
+            &:focus {
+              &:focus::-webkit-input-placeholder {
+                color: transparent !important;
+              }
+
+              &:focus::-moz-placeholder {
+                color: transparent !important;
+              }
+
+              &:focus:-moz-placeholder {
+                color: transparent !important;
+              }
+
+              &:focus:-ms-input-placeholder {
+                color: transparent !important;
+              }
+            }
             @media (max-width: 575px) {
               padding: 5px 0;
               font-size: 12px;
@@ -252,6 +295,40 @@
             background: none;
             color: $dark-gray !important;
             resize: none;
+            &::-webkit-input-placeholder {
+              color: $dark-gray;
+            }
+            &::-moz-placeholder {
+              color: $dark-gray;
+            }
+            &:-moz-placeholder {
+              color: $dark-gray;
+            }
+            &:-ms-input-placeholder {
+              color: $dark-gray;
+            }
+            @media (max-width: 575px) {
+              padding: 5px 0;
+              font-size: 12px;
+              line-height: 15px;
+            }
+            &:focus {
+              &:focus::-webkit-input-placeholder {
+                color: transparent !important;
+              }
+
+              &:focus::-moz-placeholder {
+                color: transparent !important;
+              }
+
+              &:focus:-moz-placeholder {
+                color: transparent !important;
+              }
+
+              &:focus:-ms-input-placeholder {
+                color: transparent !important;
+              }
+            }
             @media (max-width: 575px) {
               padding-top: 10px;
               height: 30px;
@@ -307,6 +384,14 @@
           &:hover {
             & svg path {
               fill: $black;
+            }
+            & .press-room-item__about {
+              & p {
+                color: $accent;
+              }
+              & span {
+                color: $accent;
+              }
             }
           }
 
@@ -414,12 +499,13 @@
           }
         }
         & p {
+          max-width: 290px;
           margin: 0;
           margin-bottom: 20px;
           font-size: 14px;
           line-height: 17px;
           letter-spacing: 0.03em;
-          color: $dark-gray;
+          color: $black;
           @media (max-width: 767px) {
             margin-bottom: 10px;
             font-size: 12px;
@@ -460,8 +546,12 @@
           }
           &.err {
             position: relative;
-            & input {
+            & input,
+            & textarea {
               border-bottom: 1px solid $accent;
+              &::placeholder:focus {
+                opacity: 0;
+              }
             }
             & .validate-error {
               position: absolute;
@@ -497,10 +587,39 @@
             border-bottom: 1px solid $border;
             background: none;
             color: $dark-gray;
+            &::-webkit-input-placeholder {
+              color: $dark-gray;
+            }
+            &::-moz-placeholder {
+              color: $dark-gray;
+            }
+            &:-moz-placeholder {
+              color: $dark-gray;
+            }
+            &:-ms-input-placeholder {
+              color: $dark-gray;
+            }
             @media (max-width: 575px) {
               padding: 5px 0;
               font-size: 12px;
               line-height: 15px;
+            }
+            &:focus {
+              &:focus::-webkit-input-placeholder {
+                color: transparent !important;
+              }
+
+              &:focus::-moz-placeholder {
+                color: transparent !important;
+              }
+
+              &:focus:-moz-placeholder {
+                color: transparent !important;
+              }
+
+              &:focus:-ms-input-placeholder {
+                color: transparent !important;
+              }
             }
           }
           & textarea {
@@ -516,6 +635,35 @@
             background: none;
             color: $dark-gray !important;
             resize: none;
+            &::-webkit-input-placeholder {
+              color: $dark-gray;
+            }
+            &::-moz-placeholder {
+              color: $dark-gray;
+            }
+            &:-moz-placeholder {
+              color: $dark-gray;
+            }
+            &:-ms-input-placeholder {
+              color: $dark-gray;
+            }
+            &:focus {
+              &:focus::-webkit-input-placeholder {
+                color: transparent !important;
+              }
+
+              &:focus::-moz-placeholder {
+                color: transparent !important;
+              }
+
+              &:focus:-moz-placeholder {
+                color: transparent !important;
+              }
+
+              &:focus:-ms-input-placeholder {
+                color: transparent !important;
+              }
+            }
             @media (max-width: 575px) {
               padding-top: 10px;
               height: 30px;

@@ -57,7 +57,7 @@ body {
       height: 100vw;
     }
   }
-  &.sizes-table__open{
+  &.sizes-table__open {
     @include bp(md) {
       overflow: hidden;
       height: 100vw;
@@ -269,7 +269,19 @@ main {
     color: $gray;
   }
   &:focus {
-    &::placeholder {
+    &:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    &:focus::-moz-placeholder {
+      color: transparent;
+    }
+
+    &:focus:-moz-placeholder {
+      color: transparent;
+    }
+
+    &:focus:-ms-input-placeholder {
       color: transparent;
     }
   }

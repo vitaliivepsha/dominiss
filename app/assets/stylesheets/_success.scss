@@ -187,15 +187,17 @@
         & a {
           display: block;
           margin-bottom: 3px;
-          font-size: 14px;
-          line-height: 17px;
           letter-spacing: 0.03em;
           color: $black;
           text-decoration: none;
           &:first-of-type {
+            font-size: 12px;
+            line-height: 15px;
             text-transform: uppercase;
           }
           &:last-of-type {
+            font-size: 14px;
+            line-height: 17px;
             margin-bottom: 6px;
           }
           &:hover {

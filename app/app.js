@@ -299,7 +299,7 @@ $(function () {
 
     // product video
 
-    if($('.product-video').length){
+    if ($('.product-video').length) {
         $('.product-video').on('click', function () {
             $(this).removeClass('product-video');
             $(this).find('.product-video__play').hide();
@@ -784,7 +784,6 @@ $(document).keydown(function (e) {
     }
 });
 
-
 // copy text
 
 $('.favorites-share-popup-btn').on('click', function () {
@@ -835,4 +834,8 @@ $('.mobile-menu__bot > ul > li span').next().hide();
 $('.mobile-menu__bot > ul > li span').on('click', function () {
     $(this).toggleClass('active');
     $(this).next().slideToggle();
+});
+
+$('.header-option select').SumoSelect({
+    forceCustomRendering: true
 });
