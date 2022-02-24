@@ -338,6 +338,8 @@
 }
 
 .shop-gallery {
+  display: flex;
+  margin-bottom: 50px;
   @media (max-width: 575px) {
     display: none;
   }

@@ -1,8 +1,7 @@
 .txt-section {
   position: relative;
-  padding: 50px 0 80px;
-  padding-top: 0;
-  @include bp(xs){
+  padding: 50px 0 60px;
+  @include bp(xs) {
     padding: 30px 0 20px;
   }
   &.main {
@@ -32,13 +31,14 @@
   letter-spacing: 0.03em;
   > h1 {
     font-family: $CormorantSC;
+    font-family: $default;
     margin-top: 0;
     text-align: center;
     margin-bottom: 17px;
     font-weight: 400;
     font-size: 21px;
     line-height: 26px;
-    @include bp(xs){
+    @include bp(xs) {
       font-size: 16px;
       line-height: 20px;
       margin-bottom: 10px;
@@ -51,7 +51,7 @@
   display: block;
   margin: 0 auto 20px;
   max-height: 50px;
-  @include bp(xs){
+  @include bp(xs) {
     max-height: 30px;
   }
   img {
@@ -76,14 +76,16 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 23px;
-    @include bp(xs){
+    color: $gray;
+    @include bp(xs) {
       margin-top: 20px;
       margin-bottom: 10px;
     }
   }
   p {
     margin-bottom: 15px;
-    @include bp(xs){
+    color: $gray;
+    @include bp(xs) {
       margin-bottom: 10px;
     }
   }
@@ -92,12 +94,13 @@
     list-style-type: disc;
     margin-bottom: 15px;
     text-align: left;
-    @include bp(xs){
+    @include bp(xs) {
       margin-bottom: 10px;
     }
     li {
       margin-bottom: 5px;
-      @include bp(xs){
+      color: $gray;
+      @include bp(xs) {
         margin-bottom: 3px;
       }
     }
@@ -107,12 +110,13 @@
     list-style-type: decimal;
     margin-bottom: 15px;
     text-align: left;
-    @include bp(xs){
+    @include bp(xs) {
       margin-bottom: 10px;
     }
     li {
       margin-bottom: 5px;
-      @include bp(xs){
+      color: $gray;
+      @include bp(xs) {
         margin-bottom: 3px;
       }
     }

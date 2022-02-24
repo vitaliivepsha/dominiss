@@ -1,7 +1,7 @@
 .shops-section {
   & .container > span {
     display: block;
-    padding: 48px 0;
+    padding: 47px 0;
     font-weight: 500;
     font-size: 28px;
     line-height: 34px;
@@ -22,7 +22,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   @media (max-width: 991px) {
     justify-content: flex-start;
   }
@@ -31,7 +31,6 @@
     margin-right: -6px;
     margin-left: -6px;
   }
-
   &-item {
     margin-bottom: 30px;
     @media (max-width: 767px) {
@@ -74,6 +73,10 @@
 }
 
 .shops-list {
+  margin-bottom: 43px;
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+  }
   & .shops-item {
     display: flex;
     flex-wrap: wrap;

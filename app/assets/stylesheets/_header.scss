@@ -222,15 +222,41 @@
   }
 }
 
-.header-lang.mobile {
-}
-
-.header-currency {
-  margin-right: 10px;
-}
-.header-currency.mobile {
-  margin-right: 0 !important;
-  padding: 0;
+.mobile-menu {
+  & .header-option {
+    width: 65px;
+    & .SumoSelect {
+      & > .CaptionCont {
+        padding: 13px 0;
+        & span {
+          padding-left: 17px;
+        }
+        & label {
+          margin-right: 0;
+        }
+      }
+      & .optWrapper {
+        & li {
+          & label {
+            padding-left: 8px;
+            & i {
+              margin-left: 0;
+              &::before {
+                margin-bottom: 1px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  & .header-option.header-lang {
+    .SumoSelect {
+      > .CaptionCont label {
+        margin-right: 13px;
+      }
+    }
+  }
 }
 
 .header-search {

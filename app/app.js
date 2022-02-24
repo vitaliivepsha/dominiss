@@ -836,6 +836,12 @@ $('.mobile-menu__bot > ul > li span').on('click', function () {
     $(this).next().slideToggle();
 });
 
+// header lang, currency
 $('.header-option select').SumoSelect({
+    forceCustomRendering: true
+});
+
+// sort
+$('.catalog-sort-select select').SumoSelect({
     forceCustomRendering: true
 });
