@@ -373,6 +373,7 @@
   text-decoration: none;
   @media (max-width: 575px) {
     margin-bottom: 0;
+    height: 80px;
   }
   &:hover {
     color: $black;

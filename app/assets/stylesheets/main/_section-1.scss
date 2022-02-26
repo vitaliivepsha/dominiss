@@ -153,8 +153,10 @@
         text-align: center;
         text-decoration: none;
         letter-spacing: 0.03em;
-
         color: #fff;
+        @media (max-width: 767px) {
+          margin: 0 auto;
+        }
         &:hover {
           color: #fff;
           border: 1px solid $black;
