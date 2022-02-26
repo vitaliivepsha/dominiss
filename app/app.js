@@ -244,6 +244,16 @@ $(function () {
         });
     }, 1000);
 
+    // show more text review
+
+    $(".reviews-show").click(function () {
+        $(this)
+            .hide()
+            .closest(".reviews-about")
+            .find(".reviews-about-inner")
+            .css({ height: "auto", "max-height": "300px", "overflow-y": "auto" });
+    });
+
     // scroll
 
     $('.scroll-wrapper').each(function () {
@@ -358,12 +368,12 @@ $(function () {
         var currentSlide;
         var slidesCount;
         var sliderCounter = $slider.closest('.counter-slider__wrapper').find('.slider-counter');
-        $(sliderCounter).text('1' + 'из' + $slider.slick('getSlick').slideCount);
+        $(sliderCounter).text('1' + ' ' + 'из' + ' ' + $slider.slick('getSlick').slideCount);
 
         var updateSliderCounter = function (slick, currentIndex) {
             currentSlide = slick.slickCurrentSlide() + 1;
             slidesCount = $slider.slick('getSlick').slideCount;
-            $(sliderCounter).text(currentSlide + 'из' + slidesCount);
+            $(sliderCounter).text(currentSlide + ' ' + 'из' + ' ' + slidesCount);
         };
 
         $slider.on('init', function (event, slick, slidesCount) {
@@ -459,6 +469,8 @@ $(function () {
 
     $('.product-sizes__close').click(function () {
         $('.product-sizes__table-menu').css('z-index', '1500');
+        $('.product-sizes__table-menu').removeClass('active');
+        $('body').removeClass('sizes-table__open');
     });
 
     $('.fitting-popup__btn').click(function () {

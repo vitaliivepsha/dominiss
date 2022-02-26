@@ -319,6 +319,9 @@
   background-color: rgba(255, 255, 255, 0.65);
   cursor: pointer;
   transition: linear 0.2s;
+  &:hover {
+    background-color: rgba(255, 255, 255, 1);
+  }
   @include bp(xs) {
     width: 20px;
     height: 20px;
@@ -451,9 +454,32 @@
     }
 
     & .CaptionCont {
+      position: relative;
       margin: 0;
       padding: 12px 0;
       border: none;
+      & span {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 20px;
+          transform: translateY(-50%);
+          width: 140px;
+          height: 20px;
+          background-color: #fff;
+          @media (max-width: 574px) {
+            width: 80px;
+            left: 15px;
+          }
+        }
+        &.placeholder {
+          &::before {
+            display: none;
+          }
+        }
+      }
+
       @media (max-width: 575px) {
         padding: 7px 0;
         padding-top: 12px;
@@ -469,6 +495,9 @@
           line-height: 12px;
         }
       }
+      & > label:hover {
+        cursor: pointer;
+      }
       & > label i {
         width: 15px;
         height: 15px;
@@ -480,7 +509,7 @@
           margin-top: 10px;
           background-size: 8px 8px;
         }
-        &:before{
+        &:before {
           display: none;
         }
       }
@@ -496,6 +525,9 @@
       border: 1px solid $border;
       border-radius: 0;
       box-shadow: none;
+      @media (max-width: 400px) {
+        padding-bottom: 0;
+      }
       & .opt.disabled {
         display: none;
       }
@@ -514,6 +546,14 @@
         & .opt {
           padding: 5px 0;
           border: none;
+          &:last-of-type {
+            @media (max-width: 400px) {
+              margin-bottom: 10px;
+            }
+          }
+          @media (max-width: 400px) {
+            padding-bottom: 0;
+          }
           &:hover {
             background: $bg-gray;
           }
@@ -546,16 +586,16 @@
   letter-spacing: 0.03em;
   color: $black !important;
   text-decoration: none !important;
-  @include bp(xs){
+  @include bp(xs) {
     height: 50px;
     padding: 0 10px;
     font-size: 13px;
     line-height: 16px;
     display: none;
   }
-  &.popup-btn{
+  &.popup-btn {
     display: none;
-    @include bp(xs){
+    @include bp(xs) {
       display: flex;
     }
   }
@@ -587,12 +627,17 @@
   margin-bottom: 15px;
   font-family: $CormorantSC;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 24px;
+  line-height: 29px;
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: $black;
+  @media (max-width: 574px) {
+    margin-bottom: 6px;
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 
 .favorites-insta-link {
@@ -604,8 +649,16 @@
   line-height: 22px;
   letter-spacing: 0.03em;
   color: $black;
+  @media (max-width: 574px) {
+    margin-bottom: 15px;
+    font-size: 12px;
+    line-height: 15px;
+  }
   & svg {
     margin-right: 6px;
+    @media (max-width: 574px) {
+      width: 23px;
+    }
   }
 }
 

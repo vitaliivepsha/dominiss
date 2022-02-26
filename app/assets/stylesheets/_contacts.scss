@@ -343,6 +343,10 @@
 
     & .acc-body {
       padding-bottom: 25px;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.03em;
+      color: $dark-gray;
       @media (max-width: 575px) {
         padding-bottom: 10px;
       }

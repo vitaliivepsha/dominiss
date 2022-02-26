@@ -551,14 +551,13 @@
     position: absolute;
     top: -5px;
     right: -6px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     width: 16px;
     height: 16px;
     background-color: $black;
     font-size: 9px;
     line-height: 16px;
+    text-align: center;
     letter-spacing: 0.03em;
     color: #ffffff;
     border-radius: 50%;
@@ -1582,7 +1581,7 @@ body.menu-opened .mobile-menu {
   cursor: default;
   & > ul {
     & > li {
-      margin-bottom: 15px;
+      margin-bottom: 23px;
       & a {
         display: flex;
         align-items: center;
@@ -1636,6 +1635,7 @@ body.menu-opened .mobile-menu {
             display: flex;
             align-items: center;
             padding-left: 30px;
+            color: $dark-gray;
             &:hover {
               color: $accent;
             }

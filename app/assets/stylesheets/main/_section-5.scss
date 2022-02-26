@@ -17,6 +17,8 @@
     text-transform: uppercase;
     @media (max-width: 767px) {
       margin-bottom: 20px;
+      font-size: 18px;
+      line-height: 22px;
     }
   }
 }
@@ -206,16 +208,37 @@
           line-height: 17px;
         }
       }
-
+      // 234234234
+      &-inner {
+        max-height: 102px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        padding-right: 2px;
+        &::-webkit-scrollbar {
+          overflow-y: scroll;
+          background: transparent;
+          width: 3px;
+          transition: linear 0.2s;
+          box-shadow: 1px 0 0 #c4c4c4;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: gray;
+          border-radius: 0;
+          width: 3px;
+          transition: linear 0.2s;
+          cursor: grab;
+        }
+        @media (max-width: 767px) {
+          margin-bottom: 10px;
+        }
+      }
       &-text {
         display: block;
-        margin-bottom: 20px;
         font-size: 14px;
         line-height: 17px;
         letter-spacing: 0.03em;
         color: $dark-gray;
         @media (max-width: 767px) {
-          margin-bottom: 10px;
           font-size: 12px;
           line-height: 15px;
         }
@@ -239,12 +262,14 @@
             line-height: 19px;
           }
         }
-        & a {
+        & .reviews-show {
+          font-family: $default;
           font-size: 10px;
           line-height: 12px;
           letter-spacing: 0.03em;
           color: $dark-gray;
           text-decoration: underline;
+          cursor: pointer;
           &:hover {
             text-decoration: none;
           }

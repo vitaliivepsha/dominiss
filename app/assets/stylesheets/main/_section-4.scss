@@ -21,6 +21,8 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
     @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 22px;
       margin-bottom: 20px;
     }
   }

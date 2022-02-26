@@ -630,10 +630,15 @@
 
 .catalog-filter__body {
   > ul {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     padding-left: 20px;
+    @media (max-width: 991px) {
+      margin-bottom: 15px;
+    }
     > li {
       margin-bottom: 15px;
+      @media (max-width: 991px) {
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -932,6 +937,10 @@
   opacity: 0;
   visibility: hidden;
   transition: linear 0.2s;
+  @media (max-width: 767px) {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .catalog-item__fav {
