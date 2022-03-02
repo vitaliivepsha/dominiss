@@ -171,12 +171,13 @@
 }
 
 .catalog-filters__bar {
-  padding: 20px 0;
+  position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  padding: 20px 0;
   transition: linear 0.2s;
-  position: relative;
   @include bp(xs) {
     padding: 13px 0;
   }
@@ -192,7 +193,7 @@
   @include bp(xs) {
     font-size: 11px;
     line-height: 13px;
-    margin-right: 12px;
+    margin-right: 2px;
   }
   svg {
     margin-left: 5px;
@@ -302,16 +303,9 @@
         &::before {
           opacity: 1 !important;
         }
-      }
-    }
-  }
-  & .optWrapper {
-    border: none;
-    box-shadow: 0 4px 20px rgba(33, 31, 31, 0.1) !important;
-    & label {
-      @media (max-width: 574px) {
-        font-size: 11px;
-        line-height: 13px;
+        @media (max-width: 574px) {
+          margin-bottom: 6px;
+        }
       }
     }
   }
@@ -330,16 +324,54 @@
       }
     }
 
+    & label {
+      cursor: pointer;
+    }
+
     & label > i {
       padding-bottom: 1px;
+      opacity: 1;
       @media (max-width: 574px) {
-        padding-bottom: 3px;
+        padding-bottom: 4px;
       }
     }
     & label > i:before {
       border: 1px solid $black !important;
       border-right: none !important;
       border-top: none !important;
+    }
+  }
+  & .optWrapper {
+    left: -100px;
+    width: 252px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    box-shadow: 0 4px 20px rgba(33, 31, 31, 0.1) !important;
+    @media (max-width: 574px) {
+      left: 0;
+      width: 230px;
+      height: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    @media (max-width: 346px) {
+      right: 0 !important;
+      left: auto !important;
+    }
+    &.isFloating {
+      width: 185px !important;
+    }
+    & li {
+      padding: 10px 6px !important;
+    }
+    & label {
+      color: $black !important;
+      padding-left: 20px;
+      @media (max-width: 574px) {
+        font-size: 11px;
+        line-height: 13px;
+      }
     }
   }
 }
@@ -351,6 +383,7 @@
   margin-right: -4px;
   @include bp(xs) {
     display: flex;
+    flex-grow: 0;
   }
 }
 

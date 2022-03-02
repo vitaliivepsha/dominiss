@@ -3,7 +3,7 @@
   padding-bottom: 44px;
   @media (max-width: 767px) {
     padding-top: 15px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
   }
 }
 
@@ -87,7 +87,7 @@
   }
   @media (max-width: 575px) {
     padding: 20px 10px;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
   }
   // контакты
   & .contacts {
@@ -303,6 +303,8 @@
       @media (max-width: 575px) {
         padding-top: 15px;
         padding-bottom: 15px;
+        font-size: 12px;
+        line-height: 15px;
       }
       &::before,
       &::after {
@@ -315,6 +317,9 @@
         height: 1px;
         background-color: $dark-gray;
         transition: transform 0.3s;
+        @media (max-width: 574px) {
+          right: 10px;
+        }
       }
 
       &.active {
@@ -339,7 +344,10 @@
       letter-spacing: 0.03em;
       color: $dark-gray;
       @media (max-width: 575px) {
+        padding-right: 10px;
         padding-bottom: 10px;
+        font-size: 12px;
+        line-height: 15px;
       }
     }
   }

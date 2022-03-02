@@ -540,15 +540,25 @@ $(function () {
     $(window).scroll(lazyload);
 });
 
-// video
-
-$('.video-inner').on('click', function (e) {
-    $(this).find('img').hide();
-    $(this).find('svg').hide();
-    $(this).find('iframe').show();
-    $(this).find('iframe')[0].src += '?autoplay=1';
-    e.preventDefault();
+// main video
+$(".main-video-wrapper").on("click", function () {
+    $(this).removeClass("main-video-wrapper");
+    $(this).find(".main-video-play").hide();
+    $(this)
+        .find("picture")
+        .hide()
+        .closest(".video-inner")
+        .find(".main-video")
+        .show()
+        .play();
 });
+
+$(".main-video").click(function () {
+    $(this).closest(".video-inner").find(".main-video-play").toggleClass("show");
+    this.paused ? this.play() : this.pause();
+});
+
+// accordion
 
 $('.acc-body').css('display', 'none');
 $('.acc-title').click(function () {

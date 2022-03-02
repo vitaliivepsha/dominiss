@@ -23,9 +23,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  @include bp(md) {
-    display: block;
-  }
+  // @include bp(md) {
+  //   display: block;
+  // }
   &.active {
     height: 100vh;
     overflow: hidden;
