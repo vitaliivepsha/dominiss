@@ -740,7 +740,7 @@
         max-height: 150px;
         overflow-y: auto;
         border: 1px solid $border;
-        padding: 12px 10px;
+        padding: 6px 0;
         &::-webkit-scrollbar {
           overflow-y: scroll;
           background: transparent;
@@ -756,9 +756,16 @@
           cursor: grab;
         }
         & li {
-          margin-bottom: 12px;
-          &:last-child {
-            margin-bottom: 0;
+          padding: 6px 10px;
+          cursor: pointer;
+          &:hover{
+            background-color: rgba(229, 229, 229, 0.5);
+          }
+          &.checked{
+            background-color: rgba(229, 229, 229, 0.5);
+            span{
+              color: $black;
+            }
           }
           & span {
             display: block;

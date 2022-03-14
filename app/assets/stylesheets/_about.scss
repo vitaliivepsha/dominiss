@@ -260,6 +260,8 @@
             border-bottom: 1px solid $border;
             background: none;
             color: $dark-gray;
+            border-radius: 0 !important;
+            box-shadow: none !important;
             &::-webkit-input-placeholder {
               color: $dark-gray;
             }
@@ -602,6 +604,8 @@
             border-bottom: 1px solid $border;
             background: none;
             color: $dark-gray;
+            border-radius: 0 !important;
+            box-shadow: none !important;
             &::-webkit-input-placeholder {
               color: $dark-gray;
             }

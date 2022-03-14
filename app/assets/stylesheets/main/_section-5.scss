@@ -20,6 +20,9 @@
       font-size: 18px;
       line-height: 22px;
     }
+    @include bp(xs) {
+      margin-bottom: 10px;
+    }
   }
 }
 

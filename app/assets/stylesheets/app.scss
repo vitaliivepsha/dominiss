@@ -172,75 +172,19 @@ main {
   }
 }
 
-/*.btn{
-  text-decoration: none;
-  border: 1px solid $black;
-  padding: 0 5px;
-  height: 50px;
-  max-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: transparent;
-  cursor: pointer;
-  transition: linear .2s;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 16px;
-  text-transform: uppercase;
-  color: $black;
-  border-radius: 0;
-  box-shadow: none;
-  outline: none !important;
-  &:focus{
-    text-decoration: none;
-    outline: none;
-    box-shadow: none;
-  }
-  &:hover{
-    text-decoration: none;
-    box-shadow: none;
-    color: $accent;
-  }
-  svg{
-    margin-left: 10px;
-  }
-  &.btn-b{
-    background-color: $black;
-    border-color: $black;
-    color: #fff;
-    &:hover{
-      background-color: $accent;
-      border-color: $accent;
-      color: #fff;
-    }
-  }
-  &.btn-f{
-    background-color: #fff;
-    border-color: $black;
-    color: #fff;
-    &:hover{
-      background-color: $accent;
-      border-color: $accent;
-      color: #fff;
-    }
-  }
-}*/
-
 .input {
   width: 100%;
   border: none;
   border-bottom: 1px solid $black;
   padding: 4px 0;
   background: transparent;
-  box-shadow: none;
-  border-radius: 0;
   font-size: 15px;
   line-height: 24px;
   color: $black;
   -webkit-appearance: none;
   appearance: none;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   &::placeholder {
     color: $gray;
   }

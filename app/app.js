@@ -340,6 +340,10 @@ $(function () {
         $(this).closest('.product-size__head').toggleClass('open').next().slideToggle();
     });
 
+    $('.product-size__list li').click(function () {
+        $(this).addClass('checked').siblings().removeClass('checked');
+    });
+
     // product info
 
     $('.product-info__head').click(function () {
@@ -670,6 +674,16 @@ $(document).on('click', function (e) {
     }
 });
 
+$('.catalog-item__fav').on('click', function () {
+    $(this).toggleClass('active');
+    if($('.catalog-item__fav').hasClass('active')){
+        $('.header-fav').removeClass('empty');
+    }
+    else{
+        $('.header-fav').addClass('empty');
+    }
+});
+
 // search
 
 $('.header-search > svg').on('click', function () {
@@ -759,6 +773,10 @@ $('.deliver-item-top').click(function () {
     $(this).find('input').prop('checked', true);
     $(this).addClass('active').next().slideDown();
     $('.deliver-item-top').not(this).removeClass('active').next().slideUp();
+});
+
+$('.address-list li').click(function () {
+    $(this).addClass('checked').siblings().removeClass('checked');
 });
 
 // favorites

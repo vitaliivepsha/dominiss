@@ -11,6 +11,9 @@
     padding-top: 25px;
     padding-bottom: 30px;
   }
+  @include bp(xs) {
+    margin-bottom: 30px;
+  }
 
   & .clients-title {
     margin-bottom: 50px;

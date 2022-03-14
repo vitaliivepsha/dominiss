@@ -543,6 +543,36 @@
     padding: 40px;
     padding-top: 30px;
   }
+  .mfp-close {
+    width: 24px;
+    height: 24px;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    opacity: 1;
+    cursor: pointer;
+    @include bp(xs) {
+      right: 3px;
+      top: 7px;
+    }
+    svg {
+      pointer-events: none;
+      path {
+        transition: linear 0.2s;
+        fill: $dark-gray;
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          fill: $black;
+        }
+      }
+    }
+  }
   & p {
     margin: 0;
     margin-bottom: 45px;

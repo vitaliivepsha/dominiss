@@ -329,6 +329,25 @@
   }
 }
 
+.special-text__body-title{
+  max-width: 450px;
+  font-size: 21px;
+  line-height: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  font-family: $CormorantSC;
+  margin: -30px auto 30px;
+  position: relative;
+  @include bp(xs) {
+    font-size: 18px;
+    line-height: 22px;
+    max-width: 350px;
+    padding: 0 0 30px;
+    margin-bottom: 0;
+  }
+}
+
 .special-text__list {
   width: 386px;
   max-width: 100%;
@@ -464,8 +483,8 @@
     @include bp(xs) {
       display: block;
       padding: 15px 10px;
-      font-size: 16px;
-      line-height: 20px;
+      font-size: 13px;
+      line-height: 16px;
       height: auto;
     }
     &:hover {

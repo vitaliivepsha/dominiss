@@ -29,8 +29,6 @@
         max-height: 900px;
       }
       &__about {
-        & p {
-        }
         & b {
           display: block;
           margin-bottom: 20px;
@@ -38,9 +36,17 @@
           line-height: 17px;
           text-align: center;
           letter-spacing: 0.03em;
-          text-align: center;
           font-weight: 400;
           color: $dark-gray;
+          @include bp(xs) {
+            font-size: 12px;
+            line-height: 15px;
+          }
+          br{
+            @include bp(xs) {
+              display: none;
+            }
+          }
         }
       }
     }
@@ -57,6 +63,9 @@
     padding: 0 15px;
     padding-bottom: 42px;
     background: $bg-gray;
+  }
+  @include bp(xs) {
+    padding-bottom: 30px;
   }
   &:nth-child(odd) {
     & .main-dresses__about {
@@ -107,6 +116,9 @@
   @media (max-width: 767px) {
     margin: 0 auto;
   }
+  @include bp(xs) {
+    padding: 0;
+  }
 
   & p {
     margin: 0;
@@ -124,6 +136,9 @@
     }
     @media (max-width: 767px) {
       margin-bottom: 30px;
+    }
+    @include bp(xs) {
+      margin-bottom: 8px;
     }
   }
   & a {
@@ -147,6 +162,9 @@
       min-height: 35px;
       font-size: 13px;
       line-height: 16px;
+    }
+    @include bp(xs) {
+      margin-top: 20px;
     }
     &:hover {
       color: #fff;

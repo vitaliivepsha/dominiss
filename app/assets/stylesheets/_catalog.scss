@@ -200,9 +200,8 @@
     margin-top: 2px;
     transition: linear 0.2s;
     @include bp(xs) {
-      svg {
-        width: 13px;
-      }
+      width: 13px;
+      height: 13px;
     }
   }
   &.active {
@@ -292,85 +291,94 @@
 }
 
 .catalog-sort-select {
-  .SumoSelect.open {
-    & label > i:before {
-      transform: rotate(135deg);
-    }
-    & .CaptionCont {
-      & label > i {
-        margin-bottom: 9px;
-        opacity: 1 !important;
-        &::before {
+  .SumoSelect{
+    &.open {
+      >.CaptionCont {
+        > label > i {
           opacity: 1 !important;
+          transform: scale(1, -1);
         }
+      }
+    }
+    >.CaptionCont {
+      width: auto;
+      min-width: 150px;
+      padding-left: 11px;
+      border: none !important;
+      @media (max-width: 767px) {
+        min-width: auto;
+      }
+      >span {
         @media (max-width: 574px) {
-          margin-bottom: 6px;
+          font-size: 11px;
+          line-height: 13px;
+          padding-right: 20px;
+        }
+      }
+
+      >label {
+        cursor: pointer;
+        @include bp(xs) {
+          width: 20px;
+        }
+      }
+
+      >label > i {
+        padding-bottom: 1px;
+        opacity: 1;
+        &:before {
+          border: none;
+          transform: none;
+          opacity: 1 !important;
+          -webkit-mask:url('../images/icons/arrow-down-lg.svg');
+          mask:url('../images/icons/arrow-down-lg.svg');
+          -webkit-mask-position:center;
+          mask-position:center;
+          -webkit-mask-repeat:no-repeat;
+          mask-repeat:no-repeat;
+          -webkit-mask-size:contain;
+          mask-size:contain;
+          background-color:$black;
+          width: 15px;
+          height: 15px;
+          @include bp(xs) {
+            width: 13px;
+            height: 13px;
+          }
         }
       }
     }
-  }
-  & .CaptionCont {
-    width: auto;
-    min-width: 150px;
-    padding-left: 11px;
-    border: none !important;
-    @media (max-width: 767px) {
-      min-width: auto;
-    }
-    & span {
+    >.optWrapper {
+      left: -100px;
+      width: 252px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border: none;
+      box-shadow: 0 4px 20px rgba(33, 31, 31, 0.1) !important;
       @media (max-width: 574px) {
-        font-size: 11px;
-        line-height: 13px;
+        left: 0;
+        width: 230px;
+        height: auto;
+        padding-top: 0;
+        padding-bottom: 0;
       }
-    }
-
-    & label {
-      cursor: pointer;
-    }
-
-    & label > i {
-      padding-bottom: 1px;
-      opacity: 1;
-      @media (max-width: 574px) {
-        padding-bottom: 4px;
+      @media (max-width: 346px) {
+        right: 0 !important;
+        left: auto !important;
       }
-    }
-    & label > i:before {
-      border: 1px solid $black !important;
-      border-right: none !important;
-      border-top: none !important;
-    }
-  }
-  & .optWrapper {
-    left: -100px;
-    width: 252px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border: none;
-    box-shadow: 0 4px 20px rgba(33, 31, 31, 0.1) !important;
-    @media (max-width: 574px) {
-      left: 0;
-      width: 230px;
-      height: auto;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-    @media (max-width: 346px) {
-      right: 0 !important;
-      left: auto !important;
-    }
-    &.isFloating {
-      width: 185px !important;
-    }
-    & li {
-      padding: 10px 6px !important;
-    }
-    & label {
-      color: $black !important;
-      padding-left: 20px;
-      @media (max-width: 574px) {
-        font-size: 11px;
-        line-height: 13px;
+      &.isFloating {
+        width: 185px !important;
+      }
+      & li {
+        padding: 10px 6px !important;
+      }
+      & label {
+        color: $black !important;
+        padding-left: 20px;
+        @media (max-width: 574px) {
+          font-size: 11px;
+          line-height: 13px;
+        }
       }
     }
   }
@@ -662,11 +670,17 @@
 }
 
 .catalog-filter__body {
+  @include bp(xs) {
+    padding-top: 5px;
+  }
   > ul {
     margin-bottom: 25px;
     padding-left: 20px;
     @media (max-width: 991px) {
       margin-bottom: 15px;
+    }
+    @include bp(xs) {
+      margin-bottom: 10px;
     }
     > li {
       margin-bottom: 15px;
@@ -991,13 +1005,26 @@
   &:hover {
     background-color: rgba(255, 255, 255, 1);
   }
+  &.active{
+    svg{
+      path{
+        fill: $black;
+      }
+    }
+  }
   @include bp(xs) {
     width: 20px;
     height: 20px;
   }
   svg {
+    width: 15px;
+    height: 16px;
+    path{
+      fill: transparent;
+    }
     @include bp(xs) {
       width: 12px;
+      height: 11px;
     }
   }
 }

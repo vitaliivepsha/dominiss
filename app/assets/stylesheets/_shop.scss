@@ -240,15 +240,15 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 16px;
-    height: 21px;
+    width: 20px;
+    height: 20px;
     background: none;
     border: none;
     font-size: 0;
     background-color: rgba(#fff, 0.6);
 
     &.slick-prev {
-      left: 15px;
+      left: 0;
       z-index: 100;
 
       &::before {

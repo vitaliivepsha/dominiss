@@ -544,9 +544,9 @@
   width: calc(100% - 102px);
   display: flex;
   flex-wrap: wrap;
+  margin-top: -9px;
   li {
-    margin-right: 13px;
-    margin-bottom: 15px;
+    margin: 0 8px 8px 0;
     position: relative;
     &:hover {
       .product-size__tooltip {
@@ -561,14 +561,27 @@
       }
     }
     &.not-available {
+      pointer-events: none;
       > a {
         > div {
           color: rgba($gray, 0.4);
         }
       }
     }
+    &.checked{
+      > a {
+        border-color: $black;
+      }
+    }
     > a {
       text-decoration: none;
+      display: block;
+      border: 1px solid transparent;
+      width: 52px;
+      min-width: max-content;
+      height: 50px;
+      border-radius: 3px;
+      padding: 8px 4px;
       &:hover {
         text-decoration: none;
       }
