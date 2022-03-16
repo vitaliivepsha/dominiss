@@ -346,7 +346,7 @@
     padding: 60px 26px !important;
   }
   .swal2-title {
-    //font-family: $title !important;
+    font-family: $default !important;
     font-size: 28px;
     line-height: 32px;
     display: block;
@@ -357,7 +357,7 @@
     font-weight: 400;
   }
   .swal2-content {
-    //font-family: $default !important;
+    font-family: $default !important;
     font-weight: normal;
     color: #000;
     font-size: 15px;
@@ -366,6 +366,7 @@
   }
   .swal2-buttonswrapper {
     margin-top: 0;
+    display: none !important;
   }
   .swal2-styled {
     display: none !important;
@@ -385,6 +386,11 @@
       padding: 0;
     }
   }
+}
+
+.swal2-modal .swal2-close {
+  display: block !important;
+  color: #000;
 }
 
 .swal2-icon {

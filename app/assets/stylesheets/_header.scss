@@ -1508,11 +1508,10 @@ body.menu-opened .mobile-menu {
 .mobile-menu__middle {
   padding: 0 15px;
   padding-top: 5px;
-  padding-bottom: 35px;
   background-color: #fff;
   cursor: default;
   & ul {
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     & li {
       & a {
         display: flex;
@@ -1532,6 +1531,11 @@ body.menu-opened .mobile-menu {
       }
     }
   }
+}
+
+.mobile-menu__middle-reg {
+  padding-top: 25px;
+  padding-bottom: 35px;
   > span {
     display: block;
     margin-bottom: 15px;

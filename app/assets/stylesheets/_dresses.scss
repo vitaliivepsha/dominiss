@@ -262,10 +262,11 @@
 .video-section.dress {
   & .video-about {
     margin-top: 30px;
-    li{
-      &:nth-child(3), &:nth-child(4){
-        i{
-          svg{
+    li {
+      &:nth-child(3),
+      &:nth-child(4) {
+        i {
+          svg {
             @include bp(xs) {
               width: 17px;
             }
@@ -274,39 +275,4 @@
       }
     }
   }
-}
-
-.dress-pic {
-  display: block;
-  position: relative;
-  width: 100%;
-  max-height: 892px;
-  cursor: pointer;
-  > picture {
-    width: 100%;
-    height: 100%;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  .dress-the-video {
-    width: 100%;
-    height: 100%;
-    max-width: 1264px;
-    display: none;
-    cursor: pointer;
-    z-index: 1;
-  }
-}
-
-.dress-video__play {
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  pointer-events: none;
 }
