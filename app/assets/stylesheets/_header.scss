@@ -1365,6 +1365,14 @@ body.menu-opened {
 body.menu-opened .mobile-menu {
   display: block;
 }
+body.menu-opened .mobile-header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+}
 
 .mobile-menu__controls {
   display: flex;
