@@ -1121,6 +1121,7 @@
       margin: 0 3px;
     }
     &.old-price {
+      text-decoration: line-through;
       opacity: 0.7;
     }
   }
