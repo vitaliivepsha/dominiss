@@ -1,18 +1,10 @@
-.search .breadcrumbs {
-  @media (max-width: 767px) {
-    display: none;
-  }
-}
-
 .search{
   .catalog-title__wrapper{
     @include bp(xs) {
       padding: 22px 0 25px;
     }
     &:before{
-      @include bp(md) {
-        display: none;
-      }
+      display: none;
     }
   }
   .catalog-views{

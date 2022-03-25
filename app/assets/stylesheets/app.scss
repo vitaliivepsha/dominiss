@@ -62,6 +62,20 @@ body {
       overflow: hidden;
       height: 100vw;
     }
+    .overlay {
+      opacity: 1;
+      z-index: 10;
+    }
+  }
+  &.lg-on {
+    overflow: hidden;
+    height: 100vw;
+  }
+  &.header-cart-open {
+    .header-cart__inner {
+      right: 0;
+      opacity: 1;
+    }
   }
 }
 
@@ -189,6 +203,7 @@ main {
     color: $gray;
   }
   &:focus {
+    font-size: 15px;
     &::placeholder {
       color: transparent;
     }
@@ -213,6 +228,7 @@ main {
     color: $gray;
   }
   &:focus {
+    font-size: 15px;
     &:focus::-webkit-input-placeholder {
       color: transparent;
     }

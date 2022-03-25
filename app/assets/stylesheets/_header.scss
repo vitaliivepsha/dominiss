@@ -138,6 +138,7 @@
       }
       &:hover {
         color: #000;
+        text-decoration: underline;
         svg {
           & path {
             fill: #000;
@@ -182,10 +183,7 @@
       }
     }
     & > .CaptionCont {
-      padding: 16px 0;
-      padding-bottom: 18px;
-      padding-left: 11px;
-      padding-right: 10px;
+      padding: 17px 10px 18px 11px;
       border-bottom: none;
       font-size: 12px;
       line-height: 15px;
@@ -304,6 +302,9 @@
       } /* Firefox 18- */
       &:-ms-input-placeholder {
         color: $black;
+      }
+      &:focus{
+        font-size: 14px;
       }
     }
     & button {
@@ -618,6 +619,7 @@
     }
     & button {
       position: absolute;
+      z-index: 1;
       top: 32px;
       right: 25px;
       display: flex;
@@ -903,6 +905,7 @@
 
       & > button {
         position: absolute;
+        z-index: 1;
         right: 23px;
         top: 20px;
         background: transparent;

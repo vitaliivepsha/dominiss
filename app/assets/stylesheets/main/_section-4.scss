@@ -159,6 +159,7 @@
     }
     & .clients-pic {
       height: 450px;
+      margin-bottom: 0;
       @media (max-width: 1170px) {
         height: calc(47vw);
       }
