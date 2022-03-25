@@ -167,6 +167,10 @@
     }
     & .reviews-pic {
       flex-shrink: 0;
+      max-width: 345px;
+      @media (max-width: 1280px) {
+        max-width: 100%;
+      }
       @media (max-width: 767px) {
         margin-bottom: 10px;
       }

@@ -502,6 +502,7 @@
         text-align: center;
         @media (max-width: 575px) {
           height: 26px;
+          padding: 3px;
         }
       }
       & th {
@@ -527,10 +528,17 @@
         & th:first-child {
           padding-left: 15px;
           text-align: left;
+          @media (max-width: 575px) {
+            padding-left: 5px;
+          }
         }
         & td:first-child {
           padding-left: 15px;
           text-align: left;
+          @media (max-width: 575px) {
+            padding-left: 5px;
+            word-wrap: break-word;
+          }
         }
       }
     }
