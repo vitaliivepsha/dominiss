@@ -7,9 +7,9 @@ require('lightgallery');
 // require('lg-thumbnail');
 // require('lg-autoplay');
 require('lg-video');
-// require('lg-fullscreen');
+require('lg-fullscreen');
 // require('lg-pager');
-// require('lg-zoom');
+require('lg-zoom');
 // require('lg-hash');
 // require('lg-share');
 

@@ -438,6 +438,7 @@
   margin-bottom: 30px;
   border-top: 1px solid $border;
   border-bottom: 1px solid $border;
+  position: relative;
   @media (max-width: 575px) {
     margin-bottom: 15px;
     border-top: none;
@@ -592,6 +593,14 @@
       }
     }
   }
+  .fav-err{
+    position: absolute;
+    color: #cc3636;
+    font-size: 12px;
+    line-height: 14px;
+    left: 0;
+    bottom: 100%;
+  }
 }
 
 .favorites-to-cart {
@@ -615,7 +624,7 @@
     display: none;
   }
   &.disabled {
-    pointer-events: none;
+
   }
   &.popup-btn {
     display: none;

@@ -308,6 +308,12 @@
           border-right: 0;
           border-top: 0;
           transform: rotate(-45deg);
+          @include bp(xs) {
+            left: 3px;
+            top: 2px;
+            width: 7px;
+            height: 5px;
+          }
         }
       }
       &:checked {

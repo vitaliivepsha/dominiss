@@ -653,15 +653,16 @@ $(document).on('click', function (e) {
 });
 
 $('.header-cart .header-cart__icon').on('click', function () {
-    $(this).parent().toggleClass('active');
     $('body').addClass('header-cart-open');
 });
 
 $('.header-cart .header-cart__inner > button').on('click', function () {
-    $(this).parent().parent().toggleClass('active');
     $('body').removeClass('header-cart-open');
 });
 
+$(document).on('click', '.header-cart__inner-main', function (e) {
+    e.stopPropagation();
+});
 
 if (!$('.header-cart-item').length) {
     $('.header-cart__inner').addClass('empty');
@@ -814,13 +815,21 @@ $('.favorites-item__size select').SumoSelect({
 
 $('.favorites-to-cart').on('click', function () {
     var s = $(this).find('span');
-    console.log(s);
-    s.html() == 'Добавить в корзину' ? s.html('В корзине') : s.html('Добавить в корзину');
-    $(this).toggleClass('in-cart');
+    if ($(window).width() > 574){
+        if ($(this).hasClass('disabled')){
+            $(this).closest('.favorites-item').find('.fav-err').remove();
+            $(this).closest('.favorites-item').find('.favorites-item__size').append('<span class="fav-err">Выберите размер</span>');
+        }
+        else{
+            s.html() == 'Добавить в корзину' ? s.html('В корзине') : s.html('Добавить в корзину');
+            $(this).toggleClass('in-cart');
+        }
+    }
 });
 
 $('.favorites-item__size select').on('change', function () {
     $(this).closest('.favorites-item').find('.favorites-to-cart').removeClass('disabled');
+    $(this).closest('.favorites-item').find('.fav-err').remove();
 });
 
 // share-popup
