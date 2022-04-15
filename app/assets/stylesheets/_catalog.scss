@@ -415,9 +415,9 @@
   float: left;
   width: 100%;
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 70px;
   @include bp(xs) {
-    padding-bottom: 10px;
+    padding-bottom: 40px;
   }
   &.opened-filters {
     .catalog-filters {
@@ -806,10 +806,10 @@
   float: left;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -5px;
+  margin: 0 -5px 20px;
   width: calc(100% + 10px);
   @include bp(xs) {
-    margin: 0 -15px;
+    margin: 0 -15px 20px;
     flex: 1 0 auto;
     width: auto;
     justify-content: space-between;
@@ -1154,5 +1154,28 @@
       object-fit: cover;
       transition: linear 0.2s;
     }
+  }
+}
+
+.catalog-items__more-btn{
+  width: 396px;
+  max-width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid $black;
+  color: $black;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  transition: linear .2s;
+  margin: 0 auto;
+  &:hover{
+    background-color: $black;
+    color: #fff;
   }
 }
