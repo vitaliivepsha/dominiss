@@ -921,3 +921,20 @@ $('.header-option select').SumoSelect({
 $('.catalog-sort-select select').SumoSelect({
     forceCustomRendering: true
 });
+
+$(function(){
+    $('.catalog-item__slider').slick({
+        dots: false,
+        autoplay: false,
+        speed: 800,
+        autoplaySpeed: 2000,
+        arrows: false,
+    });
+
+    $('.catalog-item').mouseover(function() {
+        $(this).find('.catalog-item__slider').slick('play');
+    });
+    $('.catalog-item').mouseout(function() {
+        $(this).find('.catalog-item__slider').slick('pause');
+    });
+});
