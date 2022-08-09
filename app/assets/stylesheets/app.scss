@@ -77,6 +77,13 @@ body {
       opacity: 1;
     }
   }
+  &.sort-open{
+    overflow: hidden;
+    height: 100vw;
+    .catalog-sort__menu{
+      left: 0;
+    }
+  }
 }
 
 ol,

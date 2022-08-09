@@ -922,6 +922,14 @@ $('.catalog-sort-select select').SumoSelect({
     forceCustomRendering: true
 });
 
+$('.calalog-sort-btn').click(function () {
+    $('body').addClass('sort-open');
+});
+
+$('.catalog-sort__close').click(function () {
+    $('body').removeClass('sort-open');
+});
+
 $(function(){
     $('.catalog-item__slider').slick({
         dots: false,

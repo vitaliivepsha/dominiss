@@ -292,6 +292,9 @@
 
 .catalog-sort-select {
   .SumoSelect{
+    @include bp(xs) {
+      display: none;
+    }
     &.open {
       >.CaptionCont {
         > label > i {
@@ -379,6 +382,32 @@
           font-size: 11px;
           line-height: 13px;
         }
+      }
+    }
+  }
+  .calalog-sort-btn{
+    display: none;
+    @include bp(xs) {
+      display: flex;
+    }
+    i{
+      margin-left: 4px;
+      &:before {
+        display: block;
+        content: '';
+        border: none;
+        transform: none;
+        -webkit-mask:url('../images/icons/arrow-down-lg.svg');
+        mask:url('../images/icons/arrow-down-lg.svg');
+        -webkit-mask-position:center;
+        mask-position:center;
+        -webkit-mask-repeat:no-repeat;
+        mask-repeat:no-repeat;
+        -webkit-mask-size:contain;
+        mask-size:contain;
+        background-color:$black;
+        width: 13px;
+        height: 13px;
       }
     }
   }
@@ -1210,5 +1239,75 @@
   &:hover{
     background-color: $black;
     color: #fff;
+  }
+}
+
+.catalog-sort__menu{
+  left: -101vw;
+  width: 100vw;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: 10;
+  display: none;
+  transition: linear .2s;
+  @include bp(xs) {
+    display: block;
+  }
+}
+
+.catalog-sort__head {
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: $bg-gray;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color: $black;
+  .catalog-sort__close {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.catalog-sort__body {
+  position: relative;
+  overflow: auto;
+  height: calc(100vh - 45px);
+  padding: 25px 15px;
+  &::-webkit-scrollbar {
+    overflow-y: scroll;
+    background: transparent;
+    width: 3px;
+    transition: linear 0.2s;
+    box-shadow: 1px 0 0 #c4c4c4;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $gray;
+    border-radius: 0;
+    width: 3px;
+    transition: linear 0.2s;
+    cursor: grab;
+  }
+  a{
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.03em;
+    display: block;
+    color: #757575;
+    padding: 10px 0;
+    text-decoration: none;
+    &:hover, &.current{
+      color: $black;
+      text-decoration: none;
+    }
   }
 }
