@@ -196,6 +196,7 @@
         letter-spacing: 0.03em;
         border: 1px solid $black;
         color: $black;
+        border-radius: 0;
         @media (max-width: 575px) {
           height: 35px;
           font-size: 13px;
