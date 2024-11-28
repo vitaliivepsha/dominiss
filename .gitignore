@@ -5,4 +5,5 @@ manifest.json
 *.log
 dist/
 testing/
+.idea/
 /.idea/workspace.xml

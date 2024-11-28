@@ -1676,3 +1676,190 @@ body.menu-opened .mobile-header{
     }
   }
 }
+
+body.swal2-shown,
+body.alert-message,
+body.header-fav-open,
+body.header-cart-open,
+body.menu-opened {
+  .iti {
+    z-index: 10 !important;
+  }
+}
+
+.iti--separate-dial-code.iti--show-flags .iti__selected-dial-code {
+  order: 1 !important;
+  margin-left: 3px !important;
+  margin-bottom: 2px !important;
+  font-size: 14px !important;
+  font-weight: 400;
+  @include bp(xs) {
+    font-size: 12px !important;
+  }
+}
+
+.iti__flag-container {
+  top: 1px !important;
+}
+
+.iti--allow-dropdown .iti__flag-container, .iti--separate-dial-code .iti__flag-container {
+  left: 4px;
+}
+
+.iti {
+  width: 100% !important;
+  z-index: 10000;
+
+  .iti__flag {
+    position: relative;
+    left: -6px;
+  }
+
+  .iti__arrow {
+    position: relative;
+    left: -6px;
+
+  }
+
+
+  .iti__selected-flag {
+    background-color: transparent !important;
+    padding: 0 5px 0 11px;
+    @include bp(xs) {
+      padding: 0 5px 0 7px;
+    }
+  }
+
+  .iti--allow-dropdown .iti__flag-container:hover {
+    .iti__selected-flag {
+      background-color: transparent;
+    }
+  }
+
+  .input#phone1 {
+    padding-left: 100px;
+    // новая маска
+    //padding-left: 54px !important;
+
+    &:focus {
+      &::placeholder {
+      }
+    }
+  }
+
+  ~ .validate-error {
+    //padding-left: 54px !important;
+    left: 95px !important;
+    top: 14px !important;
+    z-index: 10;
+    pointer-events: none;
+    @include bp(xs) {
+      top: 6px !important;
+      left: 87px !important;
+    }
+  }
+}
+
+
+.input-wrapper.err #phone1 {
+  color: transparent;
+}
+
+.iti-mobile .iti__country-list {
+  width: 93%;
+  @include bp(xs) {
+    width: 82% !important;
+  }
+}
+
+.fitting-popup {
+  .hide-phone-input {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -100;
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+  }
+
+  .input-wrapper .validate-error {
+    bottom: 15px;
+    background: white;
+    pointer-events: none;
+    @include bp(xs) {
+      bottom: 9px;
+    }
+  }
+
+  .iti {
+    ~ .validate-error {
+      left: 50px !important;
+      pointer-events: none;
+      top: 13px !important;
+      z-index: 40000;
+      width: 80%;
+      background: white;
+      height: 20px;
+      @include bp(xs) {
+        left: 46px !important;
+        top: 10px !important;
+        width: 70%;
+      }
+    }
+  }
+
+  .iti--separate-dial-code.iti--show-flags .iti__selected-dial-code {
+    margin-bottom: 1px !important;
+  }
+}
+
+.checkout-col-form {
+  .iti {
+    input {
+      &:focus {
+        .validate-error {
+          opacity: 0 !important;
+        }
+      }
+    }
+
+    + .validate-error {
+      + .validate-error {
+        opacity: 0 !important;
+      }
+    }
+  }
+}
+
+.input-wrapper:not(.err) .validate-error {
+  display: none !important;
+  color: transparent;
+}
+
+.validate-error ~ .iti #phone1 {
+  color: transparent !important;
+}
+
+
+.checkout-col-form__inner {
+  .iti {
+    ~ .validate-error {
+      top: 11px !important;
+      @include bp(xs) {
+        top: 6px !important;
+      }
+    }
+  }
+}
+
+.contacts__form {
+  .iti {
+    ~ .validate-error {
+      top: 11px !important;
+      @include bp(xs) {
+        top: 3px !important;
+      }
+    }
+  }
+}

@@ -47,6 +47,7 @@ require('../node_modules/ion-rangeslider/js/ion.rangeSlider');
 import PerfectScrollbar from 'perfect-scrollbar';
 import { has } from 'underscore';
 import Dropzone from 'dropzone';
+//import intlTelInput from 'intl-tel-input';
 
 // Stylesheet entrypoint
 require('_stylesheets/app.scss');
@@ -565,6 +566,84 @@ $(function () {
         });
     };
     $(window).scroll(lazyload);
+
+    // dealers
+
+    $('.dealers-filter__btn').click(function () {
+        $('.mobile-dealers__filters').addClass('active');
+    });
+
+    $('.dealers-filters__close').click(function () {
+        $('.mobile-dealers__filters').removeClass('active');
+    });
+
+    $('.dealers-countries__btn').click(function () {
+        $('.mobile-dealers__countries').addClass('active');
+    });
+
+    $('.dealers-countries__close').click(function () {
+        $('.mobile-dealers__countries').removeClass('active');
+    });
+
+    $('#dealers-countries-search-input').on('keyup', function() {
+        let filter = $(this).val().toUpperCase();
+        let count = 0;
+        $('#dealers-countries-search-results li > span').each(function() {
+            let txtValue = $(this).text();
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                $(this).parent('li').show();
+                count++;
+            } else {
+                $(this).parent('li').hide();
+            }
+        });
+        if ($(this).val().length > 0) {
+            $('#dealers-countries-search-info').html(count + ' results for <span>"' + $(this).val() + '"</span>').show();
+        } else {
+            $('#dealers-countries-search-info').hide();
+        }
+    });
+
+    $('#dealers-countries-search-results li').click(function () {
+        var country_val = $(this).data('value'),
+            country_name = $(this).find('span').html();
+        $(this).addClass('current').siblings().removeClass('current');
+        $('.mobile-dealers__countries').removeClass('active');
+        $('.dealers-countries__btn').attr('data-value', country_val).find('span').html(country_name);
+    });
+
+    /*const appointment_phone = $(".input-wrapper #appointment_phone").get(0);
+    if(typeof appointment_phone !== 'undefined') {
+        var appointment_iti = intlTelInput(appointment_phone, {
+            initialCountry: "auto",
+            separateDialCode: true,
+            formatOnDisplay: true,
+            hiddenInput: "phone",
+            autoPlaceholder: 'aggressive',
+            placeholderNumberType: "MOBILE",
+            preferredCountries: [],
+            geoIpLookup: function (success, failure) {
+                $.get("https://ipinfo.io", function () {
+                }, "jsonp").always(function (resp) {
+                    var countryCode = (resp && resp.country) ? resp.country : "us";
+                    success(countryCode);
+                });
+            },
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.14/js/utils.js?1687509211722"
+        });
+
+        $(".input-wrapper #appointment_phone").on('click', function () {
+            $(this).parent().next('.validate-error').remove();
+            $(this).closest('.input-wrapper.err').removeClass('err');
+        });
+
+        $(".input-wrapper #appointment_phone").on("keyup change", function (e) {
+            var countryCode = appointment_iti.getSelectedCountryData().dialCode;
+            $(".hide-phone-input").val('+' + countryCode + $(this).val());
+        });
+    }*/
+
+    // dealers end
 });
 
 // main video

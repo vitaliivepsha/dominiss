@@ -1,0 +1,1181 @@
+.dealers{
+  padding-top: 40px;
+  padding-bottom: 160px;
+  @include bp(xs) {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}
+
+.dealers-title{
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  @include bp(xs) {
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  h1{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
+    margin: 0;
+    @include bp(xs) {
+      font-size: 16px;
+      letter-spacing: 0.48px;
+    }
+  }
+  span{
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.36px;
+    @include bp(xs) {
+      font-size: 11px;
+      letter-spacing: 0.33px;
+    }
+  }
+}
+
+.dealers-description{
+  color: $gray;
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto 20px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.42px;
+  @include bp(md){
+    max-width: unset;
+    margin: 0 -15px;
+    padding: 0 10% 20px;
+    border-bottom: 1px solid rgba($gray, .8);
+  }
+  @include bp(xs) {
+    font-size: 12px;
+    letter-spacing: 0.36px;
+    padding: 0 15px 20px;
+  }
+}
+
+.dealers-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.dealers-sidebar{
+  width: 330px;
+  @include bp(lg){
+    width: 270px;
+  }
+  @include bp(md){
+    display: none;
+  }
+}
+
+.dealers-sidebar__title{
+  display: block;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-transform: uppercase;
+  padding: 13px 0;
+}
+
+.dealers-filters{
+  border-radius: 5px;
+  border: 1px solid $black;
+  padding: 15px 20px 23px;
+}
+
+.dealers-filter__title{
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  position: relative;
+  >i{
+    display: flex;
+    justify-content: flex-start;
+    min-width: 24px;
+  }
+  span{
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.33px;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+}
+
+.dealers-filter__tooltip{
+  >i{
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    &:hover{
+      &:before, &:after{
+        opacity: 1;
+        visibility: visible;
+      }
+      +div{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &:before{
+      position: absolute;
+      content: '';
+      background: #fff;
+      box-shadow: 0 4px 20px 0 rgba(33, 31, 31, 0.10);
+      border: 1px solid #747474;
+      width: 16px;
+      height: 16px;
+      transform: rotate(45deg) translateX(-50%);
+      left: 50%;
+      bottom: calc(100% + 2px);
+      margin-left: -3px;
+      opacity: 0;
+      visibility: hidden;
+      transition: linear .25s;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 14px;
+      background: #fff;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: calc(100% + 15px);
+      opacity: 0;
+      visibility: hidden;
+      transition: linear .25s;
+    }
+  }
+  >div{
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 11px);
+    width: calc(100% + 7px);
+    padding: 14px 8px;
+    background: #fff;
+    box-shadow: 0 4px 20px 0 rgba(33, 31, 31, 0.10);
+    border: 1px solid #747474;
+    z-index: 1;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.36px;
+    opacity: 0;
+    visibility: hidden;
+    transition: linear .1s;
+  }
+}
+
+.dealers-filter__dropdown{
+  margin-bottom: 20px;
+  .SumoSelect{
+    letter-spacing: 0.42px;
+    &:hover, &:focus, &.open{
+      > .CaptionCont{
+        border-color: rgba(33, 31, 31, 0.8);
+      }
+    }
+    &.open{
+      .search-txt{
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 10px 30px 10px 35px;
+        height: 38px;
+      }
+      .search{
+        &:before{
+          position: absolute;
+          z-index: 3;
+          pointer-events: none;
+          content: '';
+          width: 15px;
+          height: 15px;
+          background: url("../images/icons/lang-dropdown-search.svg") no-repeat;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      > .CaptionCont{
+        > label {
+          > i{
+            transform: scale(1, -1);
+            &:before{
+              transform: none;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    > .CaptionCont{
+      border: 1px solid rgba(33, 31, 31, 0.8);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      padding: 10px 15px;
+      height: 40px;
+      > label {
+        cursor: pointer;
+        > i{
+          justify-content: flex-start;
+          &:before{
+            background: url("../images/icons/lang-dropdown-arrow.svg") no-repeat;
+            border: none;
+            transform: none;
+            width: 9px;
+            height: 9px;
+          }
+        }
+      }
+    }
+    > .optWrapper{
+      border: 1px solid rgba($black, 0.8);
+      border-top-color: rgba(117, 117, 117, 0.30);
+      > .options{
+        padding: 10px 0;
+        overflow-y: auto;
+        max-height: 158px;
+        &::-webkit-scrollbar {
+          overflow-y: scroll;
+          background: transparent;
+          width: 4px;
+          transition: linear .2s;
+          box-shadow: 1px 0 0 transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: $black;
+          border-radius: 0;
+          width: 4px;
+          border-top: 1px solid #fff;
+          border-bottom: 1px solid #fff;
+          border-right: 2px solid #fff;
+          transition: linear .2s;
+          cursor: grab;
+        }
+        li.opt{
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: 0.42px;
+          color: $black;
+          padding: 3px 15px;
+        }
+      }
+    }
+    .no-match {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.42px;
+      margin-top: -20px;
+      padding: 6px 15px;
+    }
+  }
+}
+
+.dealers-filter__search{
+  position: relative;
+  >svg{
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba($black, .8);
+    padding-left: 40px;
+    padding-right: 15px;
+  }
+}
+
+.dealers-submit__btn{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 15px;
+  width: 100%;
+  height: 40px;
+  box-shadow: none;
+  border: 1px solid $black;
+  background-color: $black;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  transition: linear .2s;
+  @include bp(xs) {
+    font-size: 13px;
+  }
+  &:hover{
+    color: $black;
+    background-color: #fff;
+  }
+}
+
+.dealers-search__results{
+  color: $gray;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  display: block;
+  text-align: center;
+  margin-top: 17px;
+  @include bp(xs) {
+    font-size: 14px;
+  }
+}
+
+.dealers-partner__btn{
+  margin-top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 15px;
+  width: 100%;
+  height: 40px;
+  box-shadow: none;
+  border: 1px solid $black;
+  background-color: #fff;
+  color: $black;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  transition: linear .2s;
+  cursor: pointer;
+  @include bp(xs) {
+    font-size: 13px;
+  }
+  &:hover{
+    color: #fff;
+    background-color: $black;
+  }
+}
+
+.dealers-main{
+  width: calc(100% - 360px);
+  @include bp(lg){
+    width: calc(100% - 290px);
+  }
+  @include bp(md){
+    width: 100%;
+  }
+}
+
+.dealers-main__bar{
+  display: flex;
+  justify-content: flex-end;
+  @include bp(md){
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+  @include bp(xs){
+    padding-top: 7px;
+    padding-bottom: 8px;
+  }
+  .catalog-sort-select{
+    .SumoSelect{
+      @include bp(xs){
+        display: flex;
+      }
+      > .CaptionCont{
+        @include bp(xs){
+          padding-left: 0;
+        }
+      }
+      > .optWrapper{
+        @include bp(xs){
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.dealers-filter__btn{
+  display: none;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.33px;
+  @include bp(md){
+    display: flex;
+  }
+  @include bp(xs){
+    font-size: 11px;
+  }
+  svg{
+    margin-left: 10px;
+  }
+}
+
+.dealers-results{
+  +.products-nav-container{
+    margin-top: 54px;
+    @include bp(xs){
+      margin-top: 36px;
+    }
+    .products_counter{
+      font-size: 14px;
+    }
+  }
+}
+
+.dealers-item{
+  border-radius: 12px;
+  border: 1px solid $black;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 20px;
+  @include bp(sm) {
+    flex-direction: column;
+  }
+  @include bp(xs){
+    margin-bottom: 30px;
+  }
+}
+
+.dealers-item__info{
+  width: 425px;
+  padding: 29px 44px 29px 30px;
+  @include bp(lg){
+    width: 360px;
+    padding: 30px;
+  }
+  @include bp(sm) {
+    width: 100%;
+  }
+  @include bp(xs){
+    padding: 15px 15px 25px;
+  }
+}
+
+.dealers-item__title{
+  display: flex;
+  align-items: flex-end;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $gray;
+  margin-bottom: 16px;
+  @include bp(xs){
+    padding-bottom: 12px;
+    margin-bottom: 10px;
+  }
+  svg{
+    min-width: 16px;
+    margin-right: 10px;
+  }
+}
+
+.dealers-item__address{
+  display: flex;
+  align-items: center;
+  color: $dark-gray;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.36px;
+  margin-top: 7px;
+  svg{
+    min-width: 16px;
+    margin-right: 12px;
+    @include bp(xs){
+      width: 11px;
+      min-width: 11px;
+      margin-right: 8px;
+    }
+  }
+}
+
+.dealers-item__schedule{
+  display: flex;
+  align-items: center;
+  color: $dark-gray;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.36px;
+  margin-top: 7px;
+  svg{
+    min-width: 16px;
+    margin-right: 12px;
+    @include bp(xs){
+      width: 11px;
+      min-width: 11px;
+      margin-right: 8px;
+    }
+  }
+}
+
+.dealers-item__socials{
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+  @include bp(xs){
+    gap: 40px;
+    margin-top: 11px;
+  }
+  a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    svg{
+      margin-bottom: 4px;
+      @include bp(xs){
+        width: 19px;
+        height: 19px;
+      }
+    }
+    span{
+      color: $black;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      letter-spacing: 0.33px;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: auto;
+      text-underline-offset: auto;
+      text-underline-position: from-font;
+    }
+  }
+}
+
+.dealers-item__collections{
+  height: 160px;
+  max-height: 160px;
+  overflow-y: auto;
+  margin-top: 33px;
+  width: calc(100% + 6px);
+  margin-left: -6px;
+  @include bp(sm) {
+    height: auto;
+  }
+  @include bp(xs){
+    margin-top: 22px;
+    margin-left: 0;
+    width: calc(100% - 8px);
+    max-height: 106px;
+  }
+  &::-webkit-scrollbar {
+    overflow-y: scroll;
+    background: rgba($black, .2);
+    width: 3px;
+    transition: linear .2s;
+    box-shadow: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $black;
+    border-radius: 0;
+    width: 3px;
+    border: none;
+    transition: linear .2s;
+    cursor: grab;
+  }
+  ul{
+    list-style-type: disc;
+    padding-left: 16px;
+    color: $black;
+    text-decoration: none;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.42px;
+    @include bp(sm) {
+      overflow: hidden;
+    }
+    @include bp(xs){
+      line-height: 180%;
+    }
+    li{
+      &::marker{
+        font-size: x-small;
+      }
+      a{
+        color: $black;
+        text-decoration: none;
+        &:hover{
+          color: $gray;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.dealers-item__appointment-alert{
+  display: block;
+  color: $gray;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  margin-top: 33px;
+  @include bp(xs){
+    margin-top: 20px;
+  }
+}
+
+.dealers-item__appointment-btn{
+  margin-top: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 15px;
+  width: 100%;
+  height: 40px;
+  box-shadow: none;
+  border: 1px solid $black;
+  background-color: $black;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  transition: linear .2s;
+  cursor: pointer;
+  @include bp(xs){
+    max-width: calc(100% - 16px);
+    height: 35px;
+    font-size: 14px;
+    margin: 9px auto 0;
+  }
+  &:hover{
+    color: $black;
+    background-color: #fff;
+  }
+}
+
+.dealers-item__map{
+  width: calc(100% - 425px);
+  height: inherit;
+  @include bp(lg){
+    width: calc(100% - 360px);
+  }
+  @include bp(sm) {
+    width: 100%;
+    height: 370px;
+  }
+  iframe{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//////////
+
+.mobile-dealers__filters{
+  position: fixed;
+  background-color: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100svh;
+  z-index: 300;
+  transition: ease-in-out .3s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(calc(100vw + 50px));
+  &.active{
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.mobile-dealers__filters-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 45px;
+  background: #F8F8F8;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.39px;
+  text-transform: uppercase;
+  >div{
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 45px;
+  }
+}
+
+.mobile-dealers__filters-head-close{
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-dealers__filters-body{
+  max-height: calc(100svh - 85px);
+  overflow-y: auto;
+  padding: 30px 15px 60px;
+  &::-webkit-scrollbar {
+    overflow-y: scroll;
+    background: transparent;
+    width: 4px;
+    transition: linear .2s;
+    box-shadow: 1px 0 0 transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $black;
+    border-radius: 0;
+    width: 4px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-right: 2px solid #fff;
+    transition: linear .2s;
+    cursor: grab;
+  }
+}
+
+.dealers-filter__menu-btn{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba($black, .8);
+  padding: 0 15px;
+  span{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.42px;
+  }
+  svg{
+    min-width: 9px;
+  }
+}
+
+.mobile-dealers__countries{
+  position: fixed;
+  background-color: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100svh;
+  z-index: 301;
+  transition: ease-in-out .3s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(calc(100vw + 50px));
+  &.active{
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.mobile-dealers__countries-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 45px;
+  background: #F8F8F8;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.39px;
+  text-transform: uppercase;
+}
+
+.mobile-dealers__countries-head-close{
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-dealers__countries-input{
+  position: relative;
+  height: 40px;
+  padding: 0 15px;
+  svg{
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  input{
+    width: 100%;
+    height: 100%;
+    color: $black;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.36px;
+    border: none;
+    border-bottom: 1px solid rgba(117, 117, 117, 0.30);
+    padding: 0 15px 0 38px;
+    border-radius: 0;
+    box-shadow: none;
+    &::placeholder{
+      color: #565656;
+    }
+    &:focus{
+      @media screen and (-webkit-min-device-pixel-ratio:0) {
+        font-size: 16px;
+      }
+      &::placeholder{
+        color: transparent;
+      }
+    }
+  }
+}
+
+.mobile-dealers__countries-search-info{
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.42px;
+  padding: 30px 15px 0;
+  margin-bottom: -10px;
+  display: none;
+  span{
+    word-break: break-word;
+  }
+}
+
+.mobile-dealers__countries-search-results{
+  max-height: calc(100svh - 85px);
+  overflow-y: auto;
+  padding: 27px 15px 60px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.42px;
+  display: flex;
+  flex-direction: column;
+  &::-webkit-scrollbar {
+    overflow-y: scroll;
+    background: transparent;
+    width: 4px;
+    transition: linear .2s;
+    box-shadow: 1px 0 0 transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $black;
+    border-radius: 0;
+    width: 4px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-right: 2px solid #fff;
+    transition: linear .2s;
+    cursor: grab;
+  }
+  li{
+    position: relative;
+    padding: 3px 20px 3px 3px;
+    order: 2;
+    &.current{
+      order: 1;
+      font-weight: 700;
+    }
+    svg{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+    }
+  }
+}
+
+.appointment-popup{
+  width: 450px;
+  padding: 30px 60px 54px;
+  @include bp(xs) {
+    padding: 30px 15px;
+  }
+  .popup-title{
+    line-height: normal;
+    letter-spacing: 0.54px;
+    margin-bottom: 5px;
+  }
+}
+
+.appointment-popup__description{
+  color: $gray;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  max-width: 320px;
+  margin: 0 auto 16px;
+}
+
+.contacts__form{
+  &.appointment-form{
+    .input-wrapper{
+      margin-bottom: 26px;
+      @include bp(xs) {
+        margin-bottom: 16px;
+      }
+    }
+    .hide-phone-input{
+      opacity: 0;
+      visibility: hidden;
+      z-index: -100;
+      position: absolute;
+      width: 0;
+      height: 0;
+      padding: 0;
+    }
+    .btn{
+      width: 100%;
+    }
+  }
+}
+
+.appointment-form__goals{
+  margin-bottom: 23px;
+  margin-top: 28px;
+  >span{
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+    color: $gray;
+    margin-bottom: 14px;
+  }
+  >div{
+    +div{
+      margin-top: 8px;
+    }
+    input{
+      display: none;
+      &:checked{
+        +label{
+          svg{
+            circle{
+              &:first-child{
+                stroke: $black;
+              }
+              +circle{
+                display: block;
+              }
+            }
+          }
+        }
+      }
+      +label{
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 0.36px;
+        margin-bottom: 0;
+        cursor: pointer;
+        svg{
+          overflow: visible;
+          min-width: 15px;
+          margin-right: 13px;
+          circle{
+            +circle{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.appointment-form__wishlist{
+  margin-bottom: 24px;
+  input{
+    display: none;
+    &:checked{
+      +label{
+        svg{
+          &:first-child{
+            rect{
+              stroke: $black;
+              &:last-child{
+                fill: $black;
+              }
+              +rect{
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+    +label{
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 15px;
+      letter-spacing: 0.36px;
+      margin-bottom: 0;
+      cursor: pointer;
+      svg{
+        overflow: visible;
+        &:first-child{
+          min-width: 15px;
+          margin-right: 13px;
+        }
+        &:last-child{
+          margin-left: 7px;
+        }
+        rect{
+          +rect{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.appointment-form__comments{
+  label{
+    display: block;
+    color: $dark-gray;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.42px;
+    margin-bottom: 12px;
+  }
+  textarea{
+    font-size: 14px;
+    letter-spacing: .03em;
+    line-height: 17px;
+    padding: 5px 10px;
+    color: $dark-gray;
+    width: 100%;
+    height: 53px;
+    border: 1px solid rgba(117, 117, 117, 0.30);
+    resize: none;
+    display: block;
+    @include bp(xs) {
+      font-size: 12px;
+    }
+  }
+}
+
+.appointment-form__btn{
+  margin-top: -4px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: none;
+  border: 1px solid $black;
+  background-color: $black;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  transition: linear .2s;
+  @include bp(xs) {
+    height: 35px;
+    font-size: 13px;
+    margin-top: 20px;
+  }
+  &:hover{
+    color: $black;
+    background-color: #fff;
+  }
+}
+
+.swal2-modal{
+  .swal2-content{
+    small{
+      display: block;
+      margin-top: 20px;
+      color: $gray;
+      text-align: center;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.33px;
+    }
+  }
+}
